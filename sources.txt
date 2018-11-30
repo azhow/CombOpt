@@ -1,0 +1,21 @@
+@article{whitley1999island,
+  title={The island model genetic algorithm: On separability, population size and convergence},
+  author={Whitley, Darrell and Rana, Soraya and Heckendorn, Robert B},
+  journal={Journal of computing and information technology},
+  volume={7},
+  number={1},
+  pages={33--47},
+  year={1999},
+  publisher={SRCE-Sveu{\v{c}}ili{\v{s}}ni ra{\v{c}}unski centar}
+}
+
+@article{whitley1994genetic,
+  title={A genetic algorithm tutorial},
+  author={Whitley, Darrell},
+  journal={Statistics and computing},
+  volume={4},
+  number={2},
+  pages={65--85},
+  year={1994},
+  publisher={Springer}
+}
