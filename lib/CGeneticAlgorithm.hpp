@@ -1,14 +1,17 @@
-#ifndef CGENETICALGORITHM_H
-#define CGENETICALGORITHM_H
+#ifndef CGENETICALGORITHM_HPP
+#define CGENETICALGORITHM_HPP
 
 #include <vector>
+#include <memory>
+
+#include "CIndividual.hpp"
 
 namespace GA
 {
     class CGeneticAlgorithm
     {
         public:
-            CGeneticAlgorithm(double mutationChance, double mutationRate, bool debugFlag, int populationSize, int randSeed);
+            CGeneticAlgorithm(double mutationChance, double mutationRate, bool debugFlag, std::size_t populationSize, unsigned int randSeed);
 
             ~CGeneticAlgorithm();
 
@@ -17,17 +20,11 @@ namespace GA
         private:
             bool selection();
 
-            bool mutateIndividual();
+            bool mutate();
 
-            bool crossoverIndividual();
+            bool crossover();
 
-            bool calculateFitnessIndividual(); 
-
-            bool mutatePopulation();
-
-            bool crossoverPopulation();
-
-            bool calculateFitnessPopulation();
+            bool calculateFitness();
 
             // Chance of mutation
             double m_mutationChance;
@@ -39,16 +36,13 @@ namespace GA
             bool m_debugFlag;
 
             // Population
-            std::vector<double> m_population;
-
-            // Random range
-            const int mc_randRange = 10000;
+            std::vector<std::shared_ptr<CIndividual>> m_population;
 
             // Size of the population
-            int m_populationSize;
+            std::size_t m_populationSize;
 
             // Seed used to generate pseud random numbers
-            int m_randSeed;
+            unsigned int m_randSeed;
 
     };
 }
