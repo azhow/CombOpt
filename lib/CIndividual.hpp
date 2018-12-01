@@ -2,32 +2,45 @@
 #define CINDIVIDUAL_HPP
 
 #include <vector>
+#include <memory>
+
+#include "CFlight.hpp"
 
 namespace GA
 {
     class CIndividual
     {
         public:
-            CIndividual();
+            CIndividual(
+                std::vector<std::shared_ptr<flight::CFlight>> scheduledFlights,
+                unsigned int randSeed);
 
             ~CIndividual();
 
             bool mutate();
 
-            bool crossover();
-
             bool calculateFitness();
 
-            bool addGene(double gene);
-        private:
-            // Chromosomes of the inidividual
-            std::vector<double> m_genome;
+            bool operator<(const CIndividual& other) const;
 
-            // Genome size of the individual (every individual should have the same)
-            int m_genomeSize;
+            double getSolutionValue() const;
+
+            std::vector<std::shared_ptr<flight::CFlight>> getGenome() const;
+
+        private:
+            std::shared_ptr<flight::CFlight> getRandomElement() const;
+
+            // Chromosomes of the inidividual (order of the planes)
+            std::vector<std::shared_ptr<flight::CFlight>> m_genome;
 
             // Current fitness value of this solution
             double m_fitnessValue;
+
+            // Random seed
+            unsigned int m_randSeed;
+
+            // Solution value
+            double m_solutionValue;
     };
 }
 

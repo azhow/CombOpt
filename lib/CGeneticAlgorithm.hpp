@@ -11,24 +11,27 @@ namespace GA
     class CGeneticAlgorithm
     {
         public:
-            CGeneticAlgorithm(double mutationChance, double mutationRate, bool debugFlag, std::size_t populationSize, unsigned int randSeed);
+            CGeneticAlgorithm(
+                    double mutationRate,
+                    bool debugFlag,
+                    std::size_t populationSize,
+                    unsigned int randSeed);
 
             ~CGeneticAlgorithm();
 
-            bool run();
+            bool run(const unsigned int numOfGenerationsToConvergeWithoutImprovement);
 
         private:
             bool selection();
 
-            bool mutate();
-
             bool crossover();
 
-            bool calculateFitness();
+            bool mutatePopulation();
 
-            // Chance of mutation
-            double m_mutationChance;
-            
+            bool calculatePopulationFitness();
+
+            double evolve();
+
             // How much the is the mutation
             double m_mutationRate;
 
@@ -43,7 +46,6 @@ namespace GA
 
             // Seed used to generate pseud random numbers
             unsigned int m_randSeed;
-
     };
 }
 
