@@ -35,7 +35,12 @@ namespace GA
         // Set random seed
         std::srand(m_randSeed);
 
+        // Scheduled flights
         std::vector<std::shared_ptr<flight::CFlight>> flights;
+        for(std::size_t i = 0; i < 10; i++)
+        {
+            flights.push_back(std::make_shared<flight::CFlight>(0, 0, 0, 0, 0));
+        }
 
         // Initialize population
         for(std::size_t i = 0; i < m_populationSize; i++)
@@ -61,12 +66,14 @@ namespace GA
     {
     }
 
+    // Runs the selection phase
     bool
         CGeneticAlgorithm::selection()
     {
         return false;
     }
 
+    // Does the crossover phase
     bool
         CGeneticAlgorithm::crossover()
     {
@@ -114,6 +121,11 @@ namespace GA
     bool
         CGeneticAlgorithm::mutatePopulation()
     {
+        for(auto it = m_population.begin(); it != m_population.end(); ++it)
+        {
+            (*it)->mutate();
+        }
+
         return true;
     }
 
@@ -121,12 +133,16 @@ namespace GA
     double
         CGeneticAlgorithm::evolve()
     {
+        std::cout << "Starting selection" << std::endl;
         selection();
 
+        std::cout << "Starting crossover" << std::endl;
         crossover();
 
+        std::cout << "Starting mutation" << std::endl;
         mutatePopulation();
 
+        std::cout << "Recalculating fitness of the population" << std::endl;
         calculatePopulationFitness();
 
         // Sorts the population based on the solution value in ascending order
