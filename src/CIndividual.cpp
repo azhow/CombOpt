@@ -66,19 +66,87 @@ namespace GA
     bool
         CIndividual::calculateFitness()
     {
+        const double penaltyValue = 500;
+        bool bStatus(true);
         double fitness = 0;
+        int numOfViolations = 0;
 
         for(auto f : m_genome)
         {
+            bStatus = bStatus && checkConstraint2(numOfViolations);
+            bStatus = bStatus && checkConstraint3(numOfViolations);
             double deltaEarly = std::max(0.0, f->mp_idealTime - f->mp_actualLandingTime);
             double deltaLate = std::max(0.0, f->mp_actualLandingTime - f->mp_idealTime);
-            fitness += f->mp_earlyCost * deltaEarly + f->mp_lateCost * deltaLate;
+            fitness += f->mp_earlyCost * deltaEarly + f->mp_lateCost * deltaLate + penaltyValue * numOfViolations;
         }
 
         // The lowest the cost the better
         m_solutionValue = std::numeric_limits<double>::max() - fitness;
 
-        return true;
+        return bStatus;
+    }
+
+    /* Constraint 1 is indirectly inside constraint 2
+    bool
+        CIndividual::checkConstraint1()
+    {
+        // Check contraint 1
+        
+    }
+    */
+
+    // Constraint 2
+    bool
+        CIndividual::checkConstraint2(int& numOfViolations)
+    {
+        bool bStatus(true);
+
+        for(auto i = m_genome.begin(); i != m_genome.end(); ++i)
+        {
+            for(auto j = m_genome.begin(); j != m_genome.end(); ++j)
+            {
+                if(i != j)
+                {
+                    // If the airplane I landed before the airplane J decide the delta
+                    double delta = ((*i)->mp_actualLandingTime < (*j)->mp_actualLandingTime) ? (*i)->mp_timeBetweenFlights : ((*i)->mp_maxTime - (*j)->mp_minTime);
+                    // If the constraint is satisfied, the result is ok
+                    if((*i)->mp_actualLandingTime + delta <= (*j)->mp_actualLandingTime)
+                    {
+                        bStatus = bStatus && true;
+                    }
+                    else
+                    {
+                        numOfViolations++;
+                        bStatus = bStatus && false;
+                    }
+                }
+            }
+        }
+
+        return bStatus;
+    }
+
+    // Constraint 3
+    bool
+        CIndividual::checkConstraint3(int& numOfViolations)
+    {
+        bool bStatus(true);
+
+        // Check if all the airplane times are inside its interval of landing
+        for(auto it = m_genome.begin(); it != m_genome.end(); ++it)
+        {
+            if(((*it)->mp_minTime <= (*it)->mp_actualLandingTime) <= (*it)->mp_maxTime)
+            {
+                bStatus = bStatus && true;
+            }
+            else
+            {
+                numOfViolations++;
+                bStatus = bStatus && false;
+            }
+        }
+
+        return bStatus;
     }
 
     // Operator overload to use with sort method

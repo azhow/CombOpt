@@ -41,7 +41,7 @@ namespace GA
         std::vector<std::shared_ptr<flight::CFlight>> flights;
         for(std::size_t i = 0; i < 10; i++)
         {
-            flights.push_back(std::make_shared<flight::CFlight>(0, 0, 0, 0, 0));
+            flights.push_back(std::make_shared<flight::CFlight>(std::rand(), std::rand(), std::rand(), std::rand(), std::rand(), std::rand()));
         }
 
         // Initialize population
@@ -88,7 +88,7 @@ namespace GA
         // Selection points vector
         std::vector<double> points;
 
-        for(std::size_t i = 0; i < m_populationSize; i++)
+        for(std::size_t i = 0; i < 15; i++)
         {
             points.push_back(start + i * distanceBetweenPoints);
         }
@@ -130,24 +130,34 @@ namespace GA
         std::default_random_engine gen(m_randSeed);
 
         // Creates offspring and add to population
-        for(std::size_t i = 0; i < 10; i++)
+        for(std::size_t i = 0; i < 25; i++)
         {
+            // Select the first parent
             std::shared_ptr<CIndividual> parent1 = getRandomElement();
+            // Select the second parent
             std::shared_ptr<CIndividual> parent2 = getRandomElement();
+            // Create distribution
             std::uniform_int_distribution<> dis(0, parent1->getGenome().size() - 1);
+            // Crossover point
             int point = dis(gen);
 
+            // New genome
             std::vector<std::shared_ptr<flight::CFlight>> genome;
+            // Genome of the first parent
             std::vector<std::shared_ptr<flight::CFlight>> p1genome = parent1->getGenome();
+            // Genome of the second parent
             std::vector<std::shared_ptr<flight::CFlight>> p2genome = parent2->getGenome();
- 
+
+            // Pre-allocate vector memory
             genome.reserve(parent1->getGenome().size());
 
+            // Inserts the slice of the first parent genome
             genome.insert(
                     genome.end(),
                     p1genome.begin(),
                     p1genome.begin() + point);
 
+            // Inserts the slice of the second parent genome
             genome.insert(
                     genome.end(),
                     p2genome.begin() + point,

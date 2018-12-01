@@ -30,6 +30,10 @@ namespace GA
 
             bool crossover(std::vector<std::shared_ptr<flight::CFlight>> newGenome);
 
+            bool checkConstraint2(int& numOfViolations);
+
+            bool checkConstraint3(int& numOfViolations);
+
         private:
             std::shared_ptr<flight::CFlight> getRandomElement() const;
 

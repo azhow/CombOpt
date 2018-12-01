@@ -6,7 +6,7 @@ namespace flight
     class CFlight
     {
         public:
-            CFlight(double minTime, double maxTime, double idealTime, double earlyCost, double lateCost);
+            CFlight(double minTime, double maxTime, double idealTime, double earlyCost, double lateCost, double timeBetweenFlights);
 
             ~CFlight();
 
@@ -27,6 +27,9 @@ namespace flight
 
             // Time of the actual landing
             double mp_actualLandingTime;
+
+            // Time between each flight landing
+            double mp_timeBetweenFlights;
     };
 }
 
