@@ -12,15 +12,19 @@ namespace GA
     // Class constructor
     CIndividual::CIndividual(
             std::vector<std::shared_ptr<flight::CFlight>> scheduledFlights,
-            unsigned int randSeed) :
+            unsigned int randSeed,
+            bool initialize) :
         m_genome(scheduledFlights),
         m_randSeed(randSeed)
     {
         // Set seed
         std::srand(m_randSeed);
 
-        // Random flight order in the initialization
-        std::random_shuffle(m_genome.begin(), m_genome.end());
+        if(initialize)
+        {
+            // Random flight order in the initialization
+            std::random_shuffle(m_genome.begin(), m_genome.end());
+        }
     }
 
     // Default destructor
@@ -33,6 +37,14 @@ namespace GA
         CIndividual::getGenome() const
     {
         return m_genome;
+    }
+
+    bool
+        CIndividual::crossover(std::vector<std::shared_ptr<flight::CFlight>> newGenome)
+    {
+        m_genome = newGenome;
+
+        return true;
     }
 
     // The mutation process switches the order of 2 randomly selected flights
@@ -54,6 +66,17 @@ namespace GA
     bool
         CIndividual::calculateFitness()
     {
+        double fitness = 0;
+
+        for(auto f : m_genome)
+        {
+            double deltaEarly = std::max(0.0, f->mp_idealTime - f->mp_actualLandingTime);
+            double deltaLate = std::max(0.0, f->mp_actualLandingTime - f->mp_idealTime);
+            fitness += f->mp_earlyCost * deltaEarly + f->mp_lateCost * deltaLate;
+        }
+
+        // The lowest the cost the better
+        m_solutionValue = std::numeric_limits<double>::max() - fitness;
 
         return true;
     }
@@ -76,8 +99,8 @@ namespace GA
     std::shared_ptr<flight::CFlight> 
         CIndividual::getRandomElement() const
     {
-        // Creates a mersenne twister engine
-        std::mt19937 gen(m_randSeed);
+        // Creates a random engine
+        std::default_random_engine gen(m_randSeed);
 
         // Creates an integer distribution
         std::uniform_int_distribution<> dis(0, m_genome.size() - 1);

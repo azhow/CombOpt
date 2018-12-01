@@ -32,6 +32,13 @@ namespace GA
 
             double evolve();
 
+            bool rouletteWheelSelection(
+                    std::vector<double> points,
+                    std::vector<std::shared_ptr<CIndividual>>& selectedIndividuals);
+
+
+            std::shared_ptr<CIndividual> getRandomElement() const;
+
             // How much the is the mutation
             double m_mutationRate;
 
