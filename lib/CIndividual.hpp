@@ -18,7 +18,7 @@ namespace GA
 
             ~CIndividual();
 
-            bool mutate();
+            bool mutate(double mutationChance);
 
             bool calculateFitness();
 
@@ -26,17 +26,17 @@ namespace GA
 
             double getSolutionValue() const;
 
-            std::vector<std::shared_ptr<flight::CFlight>> getGenome() const;
+            std::vector<flight::CFlight> getGenome() const;
 
             bool checkConstraint2(int& numOfViolations);
 
             bool checkConstraint3(int& numOfViolations);
 
         private:
-            std::shared_ptr<flight::CFlight> getRandomElement() const;
+            flight::CFlight getRandomElement() const;
 
             // Chromosomes of the inidividual (order of the planes)
-            std::vector<std::shared_ptr<flight::CFlight>> m_genome;
+            std::vector<flight::CFlight> m_genome;
 
             // Current fitness value of this solution
             double m_fitnessValue;

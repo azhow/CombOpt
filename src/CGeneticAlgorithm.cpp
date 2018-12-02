@@ -7,16 +7,14 @@
 #include "CGeneticAlgorithm.hpp"
 #include "CFlight.hpp"
 
-#define MAX_RAND 20000
-
 // Structure to use in the std::sort method
 struct less_than_solution
 {
 	inline bool operator() (
-		const std::shared_ptr<GA::CIndividual>& indiv1,
-		const std::shared_ptr<GA::CIndividual>& indiv2)
+		const GA::CIndividual& indiv1,
+		const GA::CIndividual& indiv2)
 	{
-		return (indiv1->getSolutionValue() < indiv2->getSolutionValue());
+		return (indiv1.getSolutionValue() < indiv2.getSolutionValue());
 	}
 };
 
@@ -37,15 +35,14 @@ namespace GA
 		for (std::size_t i = 0; i < m_populationSize; i++)
 		{
 			// Create individual
-			std::shared_ptr<CIndividual> pIndividual = std::make_shared<CIndividual>(
-				flights,
-				m_randSeed,
-				true);
+			CIndividual pIndividual = CIndividual(flights, m_randSeed, true);
 			// Adds individual to population
 			m_population.push_back(pIndividual);
 		}
 
 		calculatePopulationFitness();
+		// Sorts population on ascending order based on their fitness
+		std::sort(m_population.begin(), m_population.end(), less_than_solution());
 	}
 
 	// Default destructor
@@ -53,137 +50,69 @@ namespace GA
 	{
 	}
 
-	// Runs the selection phase (Stochastic Universal Selection)
-	bool
+	// Runs the selection phase (Rank selection)
+	int
 		CGeneticAlgorithm::selection()
 	{
-		double populationTotalFitness = 0;
-		for (auto indiv : m_population)
+		int sumRanks = (m_population.size() + 1)*(m_population.size()/2);
+		double random = static_cast<double>(std::rand()) / static_cast<double>(RAND_MAX);
+		double acc = 0;
+
+		int i = 1;
+		for (auto it = m_population.rbegin(); it != m_population.rend(); ++it)
 		{
-			populationTotalFitness += indiv->getSolutionValue();
-		}
-		double distanceBetweenPoints = populationTotalFitness/m_populationSize;
-
-		// Start point of the selection
-		double start = distanceBetweenPoints * (static_cast<double>(std::rand())/ RAND_MAX);
-		// Selection points vector
-		std::vector<double> points;
-
-		for(std::size_t i = 0; i < 2; i++)
-		{
-			points.push_back(start + i * distanceBetweenPoints);
-		}
-
-		// Individuals chosen in the process
-		std::vector<std::shared_ptr<CIndividual>> selectedIndividuals;
-
-		rouletteWheelSelection(points, selectedIndividuals);
-
-		// Update population
-		m_population = selectedIndividuals;
-		/*
-		// Individuals chosen in the process
-		std::vector<std::shared_ptr<CIndividual>> selectedIndividuals;
-	
-		// Tounament selection (selects the best of 5 samples 10 times)
-		for (int j = 0; j < 10; j++)
-		{
-			std::vector<std::shared_ptr<CIndividual>> contenders;
-			for (int i = 0; i < 5; i++)
+			acc += static_cast<double>(i) / sumRanks;
+			if(!(acc >= random))
 			{
-				contenders.push_back(getRandomElement());
+				i++;
 			}
-			std::sort(contenders.begin(), contenders.end(), less_than_solution());
-			selectedIndividuals.push_back(*(contenders.end() - 1));
-		}
-		// Update population
-		m_population = selectedIndividuals;
-		*/
-		printPopulationFitness();
-
-		return true;
-	}
-
-	// Roulette wheel selection
-	bool
-		CGeneticAlgorithm::rouletteWheelSelection(std::vector<double> points, std::vector<std::shared_ptr<CIndividual>>& selectedIndividuals)
-	{
-		for (double p : points)
-		{
-			std::size_t index = 0;
-			double accumulator = 0;
-			while (accumulator < p)
+			else
 			{
-				accumulator += m_population[index]->getSolutionValue();
-				index++;
+				break;
 			}
-			selectedIndividuals.push_back(m_population[index]);
 		}
 
-		return true;
+		return m_population.size() - i;
 	}
 
 	// Does the crossover phase (One point crossover)
 	bool
-		CGeneticAlgorithm::crossover()
+		CGeneticAlgorithm::crossover(int parent1Idx, int parent2Idx, std::vector<CIndividual>& newGen)
 	{
-		int popInitialSize = m_population.size();
-
-		std::vector<std::shared_ptr<CIndividual>> newGen;
-		// Creates offspring and add to population
-		for (std::size_t i = 0; i < m_populationSize; i++)
+		if (static_cast<double>(std::rand()) / RAND_MAX < 0.5)
 		{
-			// Select the first parent
-			std::shared_ptr<CIndividual> parent1 = getRandomElement();
-			// Select the second parent
-			std::shared_ptr<CIndividual> parent2 = getRandomElement();
-			// Crossover point
-			int point = std::rand() % parent1->getGenome().size();
+			int point = std::rand() % m_population[parent1Idx].getGenome().size();
+			std::vector<flight::CFlight> p1Genome = m_population[parent1Idx].getGenome();
+			std::vector<flight::CFlight> p2Genome = m_population[parent2Idx].getGenome();
 
-			// New genome
-			std::vector<flight::CFlight> genome;
-			// Genome of the first parent
-			std::vector<std::shared_ptr<flight::CFlight>> p1genome = parent1->getGenome();
-			// Genome of the second parent
-			std::vector<std::shared_ptr<flight::CFlight>> p2genome = parent2->getGenome();
-
-			// Pre-allocate vector memory
-			genome.reserve(parent1->getGenome().size());
-
-			// Inserts the slice of the first parent genome
-			for (auto it = p1genome.begin(); it != p1genome.begin() + point; ++it)
+			std::vector<flight::CFlight> firstHalf;
+			for (int i = 0; i < point; i++)
 			{
-				flight::CFlight el = flight::CFlight((*it)->mp_appTime,
-					(*it)->mp_minTime,
-					(*it)->mp_idealTime,
-					(*it)->mp_maxTime,
-					(*it)->mp_earlyCost,
-					(*it)->mp_lateCost,
-					(*it)->mp_timeBetweenFlights);
-
-				el.mp_actualLandingTime = (*it)->mp_actualLandingTime;
-				genome.push_back(el);
+				firstHalf.push_back(p1Genome[i]);
 			}
+			std::vector<flight::CFlight> secondHalf = m_population[parent2Idx].getGenome();
+			firstHalf.reserve(m_population[parent1Idx].getGenome().size());
+			firstHalf.insert(firstHalf.end(), secondHalf.begin() + point, secondHalf.end());
 
-			// Inserts the slice of the first parent genome
-			for (auto it = p2genome.begin() + point; it != p2genome.end(); ++it)
+			newGen.push_back(CIndividual(firstHalf, m_randSeed, false));
+
+			std::vector<flight::CFlight> thirdHalf;
+			for (int i = 0; i < point; i++)
 			{
-				flight::CFlight el = flight::CFlight((*it)->mp_appTime,
-					(*it)->mp_minTime,
-					(*it)->mp_idealTime,
-					(*it)->mp_maxTime,
-					(*it)->mp_earlyCost,
-					(*it)->mp_lateCost,
-					(*it)->mp_timeBetweenFlights);
-
-				el.mp_actualLandingTime = (*it)->mp_actualLandingTime;
-				genome.push_back(el);
+				thirdHalf.push_back(p2Genome[i]);
 			}
+			firstHalf = m_population[parent1Idx].getGenome();
+			thirdHalf.reserve(m_population[parent1Idx].getGenome().size());
+			thirdHalf.insert(thirdHalf.end(), firstHalf.begin() + point, firstHalf.end());
 
-			newGen.push_back(std::make_shared<CIndividual>(genome, m_randSeed, false));
+			newGen.push_back(CIndividual(thirdHalf, m_randSeed, false));
+		}
+		else
+		{
+			newGen.push_back(m_population[parent1Idx]);
+			newGen.push_back(m_population[parent2Idx]);
 		}
 
-		m_population = newGen;
 		return true;
 	}
 
@@ -194,7 +123,7 @@ namespace GA
 		// Iterates through all individuals
 		for (auto it = m_population.begin(); it != m_population.end(); ++it)
 		{
-			(*it)->calculateFitness();
+			(*it).calculateFitness();
 		}
 
 		return true;
@@ -205,9 +134,9 @@ namespace GA
 		CGeneticAlgorithm::run(const unsigned int numOfGenerationsToConvergeWithoutImprovement)
 	{
 		// Best value/solution starts as +infinite
-		double bestValue = -std::numeric_limits<double>::infinity();
+		double bestValue = std::numeric_limits<double>::infinity();
 		// Current generation best value/solution starts as +infinite
-		double currentValue = -std::numeric_limits<double>::infinity();
+		double currentValue = std::numeric_limits<double>::infinity();
 		// Number of generations without real improvement in the answer
 		unsigned int numOfGenerationsWithoutImprovement = 0;
 		// Current generation
@@ -218,19 +147,20 @@ namespace GA
 		{
 			// Do the main operations
 			currentValue = evolve();
-			if (currentValue > bestValue)
+			if (currentValue < bestValue)
 			{
 				bestValue = currentValue;
 				numOfGenerationsWithoutImprovement = 0;
 			}
 			else
 			{
-				(numOfGenerationsWithoutImprovement++);
+				numOfGenerationsWithoutImprovement++;
 			}
+
 			if (m_debugFlag)
 			{
 				std::cout << "Gen: " << generation << std::endl;
-				std::cout << "\tBest: " << std::pow(bestValue, -1) << "\n\tCurrent best: " << std::pow(currentValue, -1) << std::endl;
+				std::cout << "\tBest: " << bestValue << "\n\tCurrent best: " << currentValue << std::endl;
 			}
 			generation++;
 		}
@@ -244,11 +174,7 @@ namespace GA
 	{
 		for (auto it = m_population.begin(); it != m_population.end(); ++it)
 		{
-			double i = static_cast<double>(std::rand()) / MAX_RAND;
-			if (i < m_mutationRate)
-			{
-				(*it)->mutate();
-			}
+			(*it).mutate(m_mutationRate);
 		}
 
 		return true;
@@ -258,39 +184,30 @@ namespace GA
 	double
 		CGeneticAlgorithm::evolve()
 	{
-		if (m_debugFlag && false)
+		std::vector<CIndividual> newGen;
+
+		// Each crossover adds 2 to the population
+		for (int i = 0; i < m_populationSize/2; i++)
 		{
-			std::cout << "Starting selection" << std::endl;
+			crossover(selection(), selection(), newGen);
 		}
-		selection();
-		if (m_debugFlag && false)
-		{
-			std::cout << "Starting crossover" << std::endl;
-		}
-		crossover();
-		if (m_debugFlag && false)
-		{
-			std::cout << "Starting mutation" << std::endl;
-		}
+	
+		m_population = newGen;
+
 		mutatePopulation();
-		if (m_debugFlag && false)
-		{
-			std::cout << "Recalculating fitness of the population" << std::endl;
-		}
+
 		// Updates the fitness
 		calculatePopulationFitness();
 
 		// Sorts the population based on the solution value in ascending order
 		std::sort(m_population.begin(), m_population.end(), less_than_solution());
 
-		// Returns the solution with the highest value
-		//printPopulationFitness();
-		return (*(m_population.end() - 1))->getSolutionValue();
-		//return m_population[0]->getSolutionValue();
+		// Returns the solution with the lowest value
+		return m_population[0].getSolutionValue();
 	}
 
 	// Gets a random element of the vector
-	std::shared_ptr<CIndividual>
+	CIndividual
 		CGeneticAlgorithm::getRandomElement() const
 	{
 		return m_population[std::rand() % m_population.size()];
@@ -301,7 +218,7 @@ namespace GA
 	{
 		for (auto p : m_population)
 		{
-			std::cout << std::pow(p->getSolutionValue(), -1) << " ";
+			std::cout << p.getSolutionValue() << " ";
 		}
 		std::cout << std::endl;
 	}

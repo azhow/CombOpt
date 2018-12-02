@@ -20,11 +20,11 @@ namespace GA
 		{
 			for (auto gene : scheduledFlights)
 			{
-				std::shared_ptr<flight::CFlight> flight = std::make_shared<flight::CFlight>(
+				flight::CFlight flight = flight::CFlight(
 					gene.mp_appTime, gene.mp_minTime, gene.mp_idealTime, gene.mp_maxTime,
 					gene.mp_earlyCost, gene.mp_lateCost, gene.mp_timeBetweenFlights);
 
-				flight->mp_actualLandingTime = (std::rand() % static_cast<int>(flight->mp_maxTime - flight->mp_minTime)) + flight->mp_minTime;
+				flight.mp_actualLandingTime = (std::rand() % static_cast<int>(flight.mp_maxTime - flight.mp_minTime)) + flight.mp_minTime;
 
 				m_genome.push_back(flight);
 			}
@@ -34,11 +34,11 @@ namespace GA
 			for (auto gene : scheduledFlights)
 			{
 
-				std::shared_ptr<flight::CFlight> flight = std::make_shared<flight::CFlight>(
+				flight::CFlight flight = flight::CFlight(
 					gene.mp_appTime, gene.mp_minTime, gene.mp_idealTime, gene.mp_maxTime,
 					gene.mp_earlyCost, gene.mp_lateCost, gene.mp_timeBetweenFlights);
 
-				flight->mp_actualLandingTime = gene.mp_actualLandingTime;
+				flight.mp_actualLandingTime = gene.mp_actualLandingTime;
 
 				m_genome.push_back(flight);
 			}
@@ -51,7 +51,7 @@ namespace GA
     }
 
     // Returns the genome of the individual
-    std::vector<std::shared_ptr<flight::CFlight>>
+    std::vector<flight::CFlight>
         CIndividual::getGenome() const
     {
         return m_genome;
@@ -59,13 +59,15 @@ namespace GA
 
     // The mutation process switches the order of 2 randomly selected flights
     bool
-        CIndividual::mutate()
+        CIndividual::mutate(double mutationChance)
     {
 		for (auto gene : m_genome)
 		{
-			double delta = std::rand() % 30, op = static_cast<double>(std::rand()) / RAND_MAX;
-			(op > 0.5) ? (op = 1) : op = -1;
-			gene->mp_actualLandingTime += delta * op;
+			double op = static_cast<double>(std::rand()) / RAND_MAX;
+			if(mutationChance > op)
+			{
+				gene.mp_actualLandingTime = (std::rand() % static_cast<int>(gene.mp_maxTime - gene.mp_minTime)) + gene.mp_minTime;
+			}
 		}
 
         return true;
@@ -75,7 +77,7 @@ namespace GA
     bool
         CIndividual::calculateFitness()
     {
-        const double penaltyValue = 500;
+        const double penaltyValue = 1;
         bool bStatus(true);
         double fitness = 0;
         int numOfViolations = 0;
@@ -86,28 +88,19 @@ namespace GA
             bStatus = bStatus && checkConstraint2(numOfViolations);
             bStatus = bStatus && checkConstraint3(numOfViolations);
             // How early a plane landed
-            double deltaEarly = std::max(0.0, f->mp_idealTime - f->mp_actualLandingTime);
+            double deltaEarly = std::max(0.0, f.mp_idealTime - f.mp_actualLandingTime);
             // How late a plane landed
-            double deltaLate = std::max(0.0, f->mp_actualLandingTime - f->mp_idealTime);
-            // Sum = objective + penalty
-            fitness += f->mp_earlyCost * deltaEarly + f->mp_lateCost * deltaLate + penaltyValue * numOfViolations;
+            double deltaLate = std::max(0.0, f.mp_actualLandingTime - f.mp_idealTime);
+			// Sum = objective + penalty
+            fitness += f.mp_earlyCost * deltaEarly + f.mp_lateCost * deltaLate + penaltyValue * numOfViolations;
+			//std::cout << f.mp_actualLandingTime << " " << f.mp_minTime << " " << f.mp_idealTime << " " << f.mp_maxTime << std::endl;
         }
 
         // The lowest the cost the better
-        m_solutionValue = 1/fitness;
-		//m_solutionValue = fitness;
+        m_solutionValue = fitness;
 
         return bStatus;
     }
-
-    /* Constraint 1 is indirectly inside constraint 2
-    bool
-        CIndividual::checkConstraint1()
-    {
-        // Check contraint 1
-
-    }
-    */
 
     // Constraint 2
     bool
@@ -122,9 +115,9 @@ namespace GA
                 if(i != j)
                 {
                     // If the airplane I landed before the airplane J decide the delta
-                    double delta = ((*i)->mp_actualLandingTime < (*j)->mp_actualLandingTime) ? (*i)->mp_timeBetweenFlights : ((*i)->mp_maxTime - (*j)->mp_minTime);
+                    double delta = ((*i).mp_actualLandingTime < (*j).mp_actualLandingTime) ? (*i).mp_timeBetweenFlights : ((*i).mp_maxTime - (*j).mp_minTime);
                     // If the constraint is satisfied, the result is ok
-                    if((*i)->mp_actualLandingTime + delta <= (*j)->mp_actualLandingTime)
+                    if((*i).mp_actualLandingTime + delta <= (*j).mp_actualLandingTime)
                     {
                         bStatus = bStatus && true;
                     }
@@ -149,7 +142,7 @@ namespace GA
         // Check if all the airplane times are inside its interval of landing
         for(auto it = m_genome.begin(); it != m_genome.end(); ++it)
         {
-            if(((*it)->mp_minTime <= (*it)->mp_actualLandingTime) <= (*it)->mp_maxTime)
+            if(((*it).mp_minTime <= (*it).mp_actualLandingTime) <= (*it).mp_maxTime)
             {
                 bStatus = bStatus && true;
             }
@@ -178,7 +171,7 @@ namespace GA
     }
 
     // Gets a random element of the vector
-    std::shared_ptr<flight::CFlight>
+    flight::CFlight
         CIndividual::getRandomElement() const
     {
         return m_genome[std::rand() % m_genome.size()];

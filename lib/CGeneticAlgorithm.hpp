@@ -23,9 +23,9 @@ namespace GA
             bool run(const unsigned int numOfGenerationsToConvergeWithoutImprovement);
 
         private:
-            bool selection();
+            int selection();
 
-            bool crossover();
+            bool crossover(int parent1Idx, int parent2Idx, std::vector<CIndividual>& newGen);
 
             bool mutatePopulation();
 
@@ -33,13 +33,9 @@ namespace GA
 
             double evolve();
 
-            bool rouletteWheelSelection(
-                    std::vector<double> points,
-                    std::vector<std::shared_ptr<CIndividual>>& selectedIndividuals);
-
             void printPopulationFitness() const;
 
-            std::shared_ptr<CIndividual> getRandomElement() const;
+            CIndividual getRandomElement() const;
 
             // How much the is the mutation
             double m_mutationRate;
@@ -48,7 +44,7 @@ namespace GA
             bool m_debugFlag;
 
             // Population
-            std::vector<std::shared_ptr<CIndividual>> m_population;
+            std::vector<CIndividual> m_population;
 
             // Size of the population
             std::size_t m_populationSize;
