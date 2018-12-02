@@ -16,7 +16,7 @@ namespace GA
                     bool debugFlag,
                     std::size_t populationSize,
                     unsigned int randSeed,
-                    std::vector<std::shared_ptr<flight::CFlight>> flights);
+                    std::vector<flight::CFlight> flights);
 
             ~CGeneticAlgorithm();
 

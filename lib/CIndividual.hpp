@@ -12,7 +12,7 @@ namespace GA
     {
         public:
             CIndividual(
-                std::vector<std::shared_ptr<flight::CFlight>> scheduledFlights,
+                std::vector<flight::CFlight> scheduledFlights,
                 unsigned int randSeed,
                 bool initialize);
 
@@ -27,8 +27,6 @@ namespace GA
             double getSolutionValue() const;
 
             std::vector<std::shared_ptr<flight::CFlight>> getGenome() const;
-
-            bool crossover(std::vector<std::shared_ptr<flight::CFlight>> newGenome);
 
             bool checkConstraint2(int& numOfViolations);
 

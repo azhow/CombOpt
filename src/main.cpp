@@ -11,17 +11,16 @@ std::vector<std::shared_ptr<flight::CFlight>> parseInput(std::string filename);
 
 int main(int argc, char* argv[])
 {
-    std::vector<std::shared_ptr<flight::CFlight>> flights;
+    std::vector<flight::CFlight> flights;
     for(int i = 0; i < 10; i++)
     {
-        double appTime, minTime, idealTime, maxTime, earlyCost, lateCost, freezeTime;
+        double appTime, minTime, idealTime, maxTime, earlyCost, lateCost, freezeTime = 10;
         std::string input = "";
         getline(std::cin, input);
         std::stringstream myString(input);
         if(myString >> appTime >> minTime >> idealTime >> maxTime >> earlyCost >> lateCost)
         {
-            //std::cout << appTime  << " " << minTime  << " " << idealTime  << " " << maxTime  << " " << earlyCost  << " " << lateCost << std::endl;
-            flights.push_back(std::make_shared<flight::CFlight>(appTime, minTime, idealTime, maxTime, earlyCost, lateCost, freezeTime));
+            flights.push_back(flight::CFlight(appTime, minTime, idealTime, maxTime, earlyCost, lateCost, freezeTime));
         }
     }
 
@@ -29,9 +28,14 @@ int main(int argc, char* argv[])
 
     //flights = parseInput(filepath);
 
-    GA::CGeneticAlgorithm geneticAlgorithm = GA::CGeneticAlgorithm(0, true, 10, 1000, flights);
+	// Set random seed
+	std::srand(1000);
+
+    GA::CGeneticAlgorithm geneticAlgorithm = GA::CGeneticAlgorithm(0.01, true, 50, 1000, flights);
 
     geneticAlgorithm.run(10);
+
+	std::cin.get();
 
     return 0;
 }

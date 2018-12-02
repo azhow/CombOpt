@@ -1,2 +1,5 @@
 bin/
 *.o
+/otimiza/otimiza/Debug
+/otimiza/otimiza
+/otimiza/.vs/otimiza/v15

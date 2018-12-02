@@ -3,7 +3,6 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
-#include <random>
 
 #include "CIndividual.hpp"
 #include "CFlight.hpp"
@@ -11,28 +10,40 @@
 namespace GA
 {
     // Class constructor
-    CIndividual::CIndividual(
-            std::vector<std::shared_ptr<flight::CFlight>> scheduledFlights,
-            unsigned int randSeed,
-            bool initialize) :
-        m_genome(scheduledFlights),
-        m_randSeed(randSeed)
-    {
-        // Set seed
-        std::default_random_engine gen(m_randSeed);
+	CIndividual::CIndividual(
+		std::vector<flight::CFlight> scheduledFlights,
+		unsigned int randSeed,
+		bool initialize) :
+		m_randSeed(randSeed)
+	{
+		if (initialize)
+		{
+			for (auto gene : scheduledFlights)
+			{
+				std::shared_ptr<flight::CFlight> flight = std::make_shared<flight::CFlight>(
+					gene.mp_appTime, gene.mp_minTime, gene.mp_idealTime, gene.mp_maxTime,
+					gene.mp_earlyCost, gene.mp_lateCost, gene.mp_timeBetweenFlights);
 
+				flight->mp_actualLandingTime = (std::rand() % static_cast<int>(flight->mp_maxTime - flight->mp_minTime)) + flight->mp_minTime;
 
-        if(initialize)
-        {
-            // Assign random landing time
-            for(auto gene : m_genome)
-            {
-                // Cant land after or before the maximum and minimum time
-                std::uniform_int_distribution<> dis(gene->mp_minTime, gene->mp_maxTime);
-                gene->mp_actualLandingTime = dis(gen);
-            }
-        }
-    }
+				m_genome.push_back(flight);
+			}
+		}
+		else
+		{
+			for (auto gene : scheduledFlights)
+			{
+
+				std::shared_ptr<flight::CFlight> flight = std::make_shared<flight::CFlight>(
+					gene.mp_appTime, gene.mp_minTime, gene.mp_idealTime, gene.mp_maxTime,
+					gene.mp_earlyCost, gene.mp_lateCost, gene.mp_timeBetweenFlights);
+
+				flight->mp_actualLandingTime = gene.mp_actualLandingTime;
+
+				m_genome.push_back(flight);
+			}
+		}
+	}
 
     // Default destructor
     CIndividual::~CIndividual()
@@ -50,13 +61,12 @@ namespace GA
     bool
         CIndividual::mutate()
     {
-        // Selects randomly one individual
-        std::shared_ptr<flight::CFlight> el1 = getRandomElement();
-        // Selects randomly one individual
-        std::shared_ptr<flight::CFlight> el2 = getRandomElement();
-
-        // Swaps Flights's landing times
-        std::swap(el1->mp_actualLandingTime, el2->mp_actualLandingTime);
+		for (auto gene : m_genome)
+		{
+			double delta = std::rand() % 30, op = static_cast<double>(std::rand()) / RAND_MAX;
+			(op > 0.5) ? (op = 1) : op = -1;
+			gene->mp_actualLandingTime += delta * op;
+		}
 
         return true;
     }
@@ -85,6 +95,7 @@ namespace GA
 
         // The lowest the cost the better
         m_solutionValue = 1/fitness;
+		//m_solutionValue = fitness;
 
         return bStatus;
     }
@@ -170,12 +181,6 @@ namespace GA
     std::shared_ptr<flight::CFlight>
         CIndividual::getRandomElement() const
     {
-        // Creates a random engine
-        std::default_random_engine gen(m_randSeed);
-
-        // Creates an integer distribution
-        std::uniform_int_distribution<> dis(0, m_genome.size() - 1);
-
-        return m_genome[dis(gen)];
+        return m_genome[std::rand() % m_genome.size()];
     }
 }
