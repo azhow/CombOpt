@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <memory>
@@ -18,12 +19,18 @@ namespace GA
         m_randSeed(randSeed)
     {
         // Set seed
-        std::srand(m_randSeed);
+        std::default_random_engine gen(m_randSeed);
+
 
         if(initialize)
         {
-            // Random flight order in the initialization
-            std::random_shuffle(m_genome.begin(), m_genome.end());
+            // Assign random landing time
+            for(auto gene : m_genome)
+            {
+                // Cant land after or before the maximum and minimum time
+                std::uniform_int_distribution<> dis(gene->mp_minTime, gene->mp_maxTime);
+                gene->mp_actualLandingTime = dis(gen);
+            }
         }
     }
 
@@ -37,14 +44,6 @@ namespace GA
         CIndividual::getGenome() const
     {
         return m_genome;
-    }
-
-    bool
-        CIndividual::crossover(std::vector<std::shared_ptr<flight::CFlight>> newGenome)
-    {
-        m_genome = newGenome;
-
-        return true;
     }
 
     // The mutation process switches the order of 2 randomly selected flights
@@ -73,15 +72,19 @@ namespace GA
 
         for(auto f : m_genome)
         {
+            // Check for violations of the constraints and how many times (favor more correct ones)
             bStatus = bStatus && checkConstraint2(numOfViolations);
             bStatus = bStatus && checkConstraint3(numOfViolations);
+            // How early a plane landed
             double deltaEarly = std::max(0.0, f->mp_idealTime - f->mp_actualLandingTime);
+            // How late a plane landed
             double deltaLate = std::max(0.0, f->mp_actualLandingTime - f->mp_idealTime);
+            // Sum = objective + penalty
             fitness += f->mp_earlyCost * deltaEarly + f->mp_lateCost * deltaLate + penaltyValue * numOfViolations;
         }
 
         // The lowest the cost the better
-        m_solutionValue = std::numeric_limits<double>::max() - fitness;
+        m_solutionValue = 1/fitness;
 
         return bStatus;
     }
@@ -91,7 +94,7 @@ namespace GA
         CIndividual::checkConstraint1()
     {
         // Check contraint 1
-        
+
     }
     */
 
@@ -164,7 +167,7 @@ namespace GA
     }
 
     // Gets a random element of the vector
-    std::shared_ptr<flight::CFlight> 
+    std::shared_ptr<flight::CFlight>
         CIndividual::getRandomElement() const
     {
         // Creates a random engine

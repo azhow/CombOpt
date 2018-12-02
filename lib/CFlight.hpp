@@ -6,18 +6,21 @@ namespace flight
     class CFlight
     {
         public:
-            CFlight(double minTime, double maxTime, double idealTime, double earlyCost, double lateCost, double timeBetweenFlights);
+            CFlight(double appTime, double minTime, double idealTime, double maxTime, double earlyCost, double lateCost, double timeBetweenFlights);
 
             ~CFlight();
+
+            // Appearence time
+            double mp_appTime;
 
             // Earliest time that the flight can land
             double mp_minTime;
 
+                // Ideal time for the flight to land
+            double mp_idealTime;
+
             // Latest time that the flight can land
             double mp_maxTime;
-
-            // Ideal time for the flight to land
-            double mp_idealTime;
 
             // Cost per unit of time ahead of ideal time
             double mp_earlyCost;

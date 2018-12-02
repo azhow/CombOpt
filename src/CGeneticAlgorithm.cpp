@@ -27,7 +27,8 @@ namespace GA
             double mutationRate,
             bool debugFlag,
             std::size_t populationSize,
-            unsigned int randSeed) :
+            unsigned int randSeed,
+            std::vector<std::shared_ptr<flight::CFlight>> flights) :
     m_mutationRate(mutationRate),
     m_debugFlag(debugFlag),
     m_populationSize(populationSize),
@@ -36,32 +37,16 @@ namespace GA
         // Set random seed
         std::srand(m_randSeed);
 
-        // This will be input data
-        // Scheduled flights
-        std::vector<std::shared_ptr<flight::CFlight>> flights;
-        for(std::size_t i = 0; i < 10; i++)
-        {
-            flights.push_back(std::make_shared<flight::CFlight>(std::rand(), std::rand(), std::rand(), std::rand(), std::rand(), std::rand()));
-        }
-
         // Initialize population
         for(std::size_t i = 0; i < m_populationSize; i++)
         {
             // Create individual
-            std::shared_ptr<CIndividual> pIndividual = std::make_shared<CIndividual>(flights, m_randSeed, true);
+            std::shared_ptr<CIndividual> pIndividual = std::make_shared<CIndividual>(
+                    flights,
+                    m_randSeed,
+                    true);
             // Adds individual to population
             m_population.push_back(pIndividual);
-        }
-
-        // Debug info
-        if(m_debugFlag && false)
-        {
-            std::cout << "Setup ok!" << std::endl;
-
-            for(auto it = m_population.begin(); it != m_population.end(); ++it)
-            {
-                std::cout << "Individual" << std::endl;
-            }
         }
 
         calculatePopulationFitness();
@@ -119,7 +104,7 @@ namespace GA
             }
             selectedIndividuals.push_back(m_population[index]);
         }
-    
+
         return true;
     }
 
@@ -232,6 +217,7 @@ namespace GA
     double
         CGeneticAlgorithm::evolve()
     {
+        printPopulationFitness();
         if(m_debugFlag && false)
         {
             std::cout << "Starting selection" << std::endl;
@@ -256,12 +242,13 @@ namespace GA
         // Sorts the population based on the solution value in ascending order
         std::sort(m_population.begin(), m_population.end(), less_than_solution());
 
-        // Returns the solution with the lowest value
+        // Returns the solution with the highest value
+        //return (*(m_population.end() - 1))->getSolutionValue();
         return m_population[0]->getSolutionValue();
     }
 
     // Gets a random element of the vector
-    std::shared_ptr<CIndividual> 
+    std::shared_ptr<CIndividual>
         CGeneticAlgorithm::getRandomElement() const
     {
         // Creates a mersenne twister engine
@@ -273,4 +260,13 @@ namespace GA
         return m_population[dis(gen)];
     }
 
+    void
+        CGeneticAlgorithm::printPopulationFitness() const
+    {
+        for(auto p : m_population)
+        {
+            std::cout << p->getSolutionValue() << " ";
+        }
+        std::cout << std::endl;
+    }
 }

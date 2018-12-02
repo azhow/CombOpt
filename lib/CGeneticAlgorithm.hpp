@@ -15,7 +15,8 @@ namespace GA
                     double mutationRate,
                     bool debugFlag,
                     std::size_t populationSize,
-                    unsigned int randSeed);
+                    unsigned int randSeed,
+                    std::vector<std::shared_ptr<flight::CFlight>> flights);
 
             ~CGeneticAlgorithm();
 
@@ -36,6 +37,7 @@ namespace GA
                     std::vector<double> points,
                     std::vector<std::shared_ptr<CIndividual>>& selectedIndividuals);
 
+            void printPopulationFitness() const;
 
             std::shared_ptr<CIndividual> getRandomElement() const;
 
