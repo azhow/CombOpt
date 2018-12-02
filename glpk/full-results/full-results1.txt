@@ -1,0 +1,51 @@
+GLPSOL: GLPK LP/MIP Solver, v4.55
+Parameter(s) specified in the command line:
+ --math alp_v2.mod --data airland1.dat --tmlim 3600 --memlim 2000 --output
+ results1.txt
+Reading model section from alp_v2.mod...
+41 lines were read
+Reading data section from airland1.dat...
+29 lines were read
+Generating cost...
+Generating T_MINUS_X...
+Generating X_MINUS_T...
+Generating ALL_PLANES...
+Generating TIME_WINDOWS...
+Generating LANDING_WAIT...
+Model has been successfully generated
+GLPK Integer Optimizer, v4.55
+166 rows, 120 columns, 520 non-zeros
+90 integer variables, all of which are binary
+Preprocessing...
+155 rows, 120 columns, 490 non-zeros
+90 integer variables, all of which are binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  6.550e+02  ratio =  6.550e+02
+GM: min|aij| =  7.963e-02  max|aij| =  1.256e+01  ratio =  1.577e+02
+EQ: min|aij| =  6.341e-03  max|aij| =  1.000e+00  ratio =  1.577e+02
+2N: min|aij| =  5.859e-03  max|aij| =  1.629e+00  ratio =  2.780e+02
+Constructing initial basis...
+Size of triangular part is 155
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.55
+155 rows, 120 columns, 490 non-zeros
+      0: obj =   0.000000000e+00  infeas =  3.223e+01 (0)
+*    33: obj =   1.520000000e+03  infeas =  0.000e+00 (0)
+*    38: obj =   0.000000000e+00  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
++    38: mip =     not found yet >=              -inf        (1; 0)
++   194: >>>>>   1.129000000e+04 >=   2.800000000e+02  97.5% (46; 1)
++   425: >>>>>   8.810000000e+03 >=   4.300000000e+02  95.1% (85; 16)
++   469: >>>>>   7.710000000e+03 >=   4.300000000e+02  94.4% (77; 43)
++   510: >>>>>   5.120000000e+03 >=   4.300000000e+02  91.6% (76; 59)
++   553: >>>>>   3.260000000e+03 >=   4.300000000e+02  86.8% (54; 113)
++   589: >>>>>   2.680000000e+03 >=   4.300000000e+02  84.0% (47; 147)
++   620: >>>>>   1.900000000e+03 >=   4.300000000e+02  77.4% (45; 158)
++   664: >>>>>   7.000000000e+02 >=   4.600000000e+02  34.3% (40; 184)
++   732: mip =   7.000000000e+02 >=     tree is empty   0.0% (0; 303)
+INTEGER OPTIMAL SOLUTION FOUND
+Time used:   0.1 secs
+Memory used: 0.5 Mb (540453 bytes)
+Writing MIP solution to 'results1.txt'...
+

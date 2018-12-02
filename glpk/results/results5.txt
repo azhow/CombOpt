@@ -1,0 +1,1745 @@
+Problem:    alp_v2
+Rows:       631
+Columns:    440 (380 integer, 380 binary)
+Non-zeros:  2040
+Status:     INTEGER OPTIMAL
+Objective:  cost = 3100 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 cost                     3100                             
+     2 T_MINUS_X[cx]
+                                 201           155               
+     3 T_MINUS_X[ff]
+                                 246           246               
+     4 T_MINUS_X[jy]
+                                  90            90               
+     5 T_MINUS_X[yc]
+                                  94            94               
+     6 T_MINUS_X[gn]
+                                 105           105               
+     7 T_MINUS_X[zv]
+                                 122           112               
+     8 T_MINUS_X[rf]
+                                 114           112               
+     9 T_MINUS_X[ug]
+                                 111           111               
+    10 T_MINUS_X[lo]
+                                 130           117               
+    11 T_MINUS_X[bd]
+                                 138           137               
+    12 T_MINUS_X[to]
+                                 307           307               
+    13 T_MINUS_X[jl]
+                                 280           280               
+    14 T_MINUS_X[qn]
+                                 178           161               
+    15 T_MINUS_X[jm]
+                                 151           151               
+    16 T_MINUS_X[wo]
+                                 301           301               
+    17 T_MINUS_X[tj]
+                                 393           393               
+    18 T_MINUS_X[ow]
+                                 162           159               
+    19 T_MINUS_X[ub]
+                                 170           162               
+    20 T_MINUS_X[ue]
+                                 154           153               
+    21 T_MINUS_X[la]
+                                 186           182               
+    22 X_MINUS_T[cx]
+                                -155          -155               
+    23 X_MINUS_T[ff]
+                                -246          -246               
+    24 X_MINUS_T[jy]
+                                 -82           -90               
+    25 X_MINUS_T[yc]
+                                 -90           -94               
+    26 X_MINUS_T[gn]
+                                 -98          -105               
+    27 X_MINUS_T[zv]
+                                -112          -112               
+    28 X_MINUS_T[rf]
+                                -112          -112               
+    29 X_MINUS_T[ug]
+                                -106          -111               
+    30 X_MINUS_T[lo]
+                                -117          -117               
+    31 X_MINUS_T[bd]
+                                -137          -137               
+    32 X_MINUS_T[to]
+                                -307          -307               
+    33 X_MINUS_T[jl]
+                                -280          -280               
+    34 X_MINUS_T[qn]
+                                -161          -161               
+    35 X_MINUS_T[jm]
+                                -146          -151               
+    36 X_MINUS_T[wo]
+                                -301          -301               
+    37 X_MINUS_T[tj]
+                                -393          -393               
+    38 X_MINUS_T[ow]
+                                -159          -159               
+    39 X_MINUS_T[ub]
+                                -162          -162               
+    40 X_MINUS_T[ue]
+                                -153          -153               
+    41 X_MINUS_T[la]
+                                -182          -182               
+    42 ALL_PLANES[cx,ff]
+                                   1             1             = 
+    43 ALL_PLANES[cx,jy]
+                                   1             1             = 
+    44 ALL_PLANES[cx,yc]
+                                   1             1             = 
+    45 ALL_PLANES[cx,gn]
+                                   1             1             = 
+    46 ALL_PLANES[cx,zv]
+                                   1             1             = 
+    47 ALL_PLANES[cx,rf]
+                                   1             1             = 
+    48 ALL_PLANES[cx,ug]
+                                   1             1             = 
+    49 ALL_PLANES[cx,lo]
+                                   1             1             = 
+    50 ALL_PLANES[cx,to]
+                                   1             1             = 
+    51 ALL_PLANES[cx,jl]
+                                   1             1             = 
+    52 ALL_PLANES[cx,qn]
+                                   1             1             = 
+    53 ALL_PLANES[cx,jm]
+                                   1             1             = 
+    54 ALL_PLANES[cx,wo]
+                                   1             1             = 
+    55 ALL_PLANES[cx,tj]
+                                   1             1             = 
+    56 ALL_PLANES[cx,ow]
+                                   1             1             = 
+    57 ALL_PLANES[cx,ub]
+                                   1             1             = 
+    58 ALL_PLANES[cx,ue]
+                                   1             1             = 
+    59 ALL_PLANES[cx,la]
+                                   1             1             = 
+    60 ALL_PLANES[ff,jy]
+                                   1             1             = 
+    61 ALL_PLANES[ff,yc]
+                                   1             1             = 
+    62 ALL_PLANES[ff,gn]
+                                   1             1             = 
+    63 ALL_PLANES[ff,zv]
+                                   1             1             = 
+    64 ALL_PLANES[ff,rf]
+                                   1             1             = 
+    65 ALL_PLANES[ff,ug]
+                                   1             1             = 
+    66 ALL_PLANES[ff,lo]
+                                   1             1             = 
+    67 ALL_PLANES[ff,to]
+                                   1             1             = 
+    68 ALL_PLANES[ff,jl]
+                                   1             1             = 
+    69 ALL_PLANES[ff,qn]
+                                   1             1             = 
+    70 ALL_PLANES[ff,jm]
+                                   1             1             = 
+    71 ALL_PLANES[ff,wo]
+                                   1             1             = 
+    72 ALL_PLANES[ff,tj]
+                                   1             1             = 
+    73 ALL_PLANES[ff,ow]
+                                   1             1             = 
+    74 ALL_PLANES[ff,ub]
+                                   1             1             = 
+    75 ALL_PLANES[ff,ue]
+                                   1             1             = 
+    76 ALL_PLANES[ff,la]
+                                   1             1             = 
+    77 ALL_PLANES[jy,yc]
+                                   1             1             = 
+    78 ALL_PLANES[jy,zv]
+                                   1             1             = 
+    79 ALL_PLANES[jy,rf]
+                                   1             1             = 
+    80 ALL_PLANES[jy,ug]
+                                   1             1             = 
+    81 ALL_PLANES[jy,lo]
+                                   1             1             = 
+    82 ALL_PLANES[jy,to]
+                                   1             1             = 
+    83 ALL_PLANES[jy,qn]
+                                   1             1             = 
+    84 ALL_PLANES[jy,wo]
+                                   1             1             = 
+    85 ALL_PLANES[jy,tj]
+                                   1             1             = 
+    86 ALL_PLANES[jy,ow]
+                                   1             1             = 
+    87 ALL_PLANES[jy,ub]
+                                   1             1             = 
+    88 ALL_PLANES[jy,ue]
+                                   1             1             = 
+    89 ALL_PLANES[jy,la]
+                                   1             1             = 
+    90 ALL_PLANES[yc,zv]
+                                   1             1             = 
+    91 ALL_PLANES[gn,jy]
+                                   1             1             = 
+    92 ALL_PLANES[gn,yc]
+                                   1             1             = 
+    93 ALL_PLANES[gn,zv]
+                                   1             1             = 
+    94 ALL_PLANES[gn,rf]
+                                   1             1             = 
+    95 ALL_PLANES[gn,ug]
+                                   1             1             = 
+    96 ALL_PLANES[gn,lo]
+                                   1             1             = 
+    97 ALL_PLANES[gn,to]
+                                   1             1             = 
+    98 ALL_PLANES[gn,jl]
+                                   1             1             = 
+    99 ALL_PLANES[gn,qn]
+                                   1             1             = 
+   100 ALL_PLANES[gn,jm]
+                                   1             1             = 
+   101 ALL_PLANES[gn,wo]
+                                   1             1             = 
+   102 ALL_PLANES[gn,tj]
+                                   1             1             = 
+   103 ALL_PLANES[gn,ow]
+                                   1             1             = 
+   104 ALL_PLANES[gn,ub]
+                                   1             1             = 
+   105 ALL_PLANES[gn,ue]
+                                   1             1             = 
+   106 ALL_PLANES[gn,la]
+                                   1             1             = 
+   107 ALL_PLANES[rf,yc]
+                                   1             1             = 
+   108 ALL_PLANES[rf,zv]
+                                   1             1             = 
+   109 ALL_PLANES[rf,ug]
+                                   1             1             = 
+   110 ALL_PLANES[rf,to]
+                                   1             1             = 
+   111 ALL_PLANES[rf,wo]
+                                   1             1             = 
+   112 ALL_PLANES[rf,tj]
+                                   1             1             = 
+   113 ALL_PLANES[rf,ub]
+                                   1             1             = 
+   114 ALL_PLANES[rf,ue]
+                                   1             1             = 
+   115 ALL_PLANES[ug,yc]
+                                   1             1             = 
+   116 ALL_PLANES[ug,zv]
+                                   1             1             = 
+   117 ALL_PLANES[ug,wo]
+                                   1             1             = 
+   118 ALL_PLANES[lo,yc]
+                                   1             1             = 
+   119 ALL_PLANES[lo,zv]
+                                   1             1             = 
+   120 ALL_PLANES[lo,rf]
+                                   1             1             = 
+   121 ALL_PLANES[lo,ug]
+                                   1             1             = 
+   122 ALL_PLANES[lo,to]
+                                   1             1             = 
+   123 ALL_PLANES[lo,qn]
+                                   1             1             = 
+   124 ALL_PLANES[lo,wo]
+                                   1             1             = 
+   125 ALL_PLANES[lo,tj]
+                                   1             1             = 
+   126 ALL_PLANES[lo,ow]
+                                   1             1             = 
+   127 ALL_PLANES[lo,ub]
+                                   1             1             = 
+   128 ALL_PLANES[lo,ue]
+                                   1             1             = 
+   129 ALL_PLANES[bd,cx]
+                                   1             1             = 
+   130 ALL_PLANES[bd,ff]
+                                   1             1             = 
+   131 ALL_PLANES[bd,jy]
+                                   1             1             = 
+   132 ALL_PLANES[bd,yc]
+                                   1             1             = 
+   133 ALL_PLANES[bd,gn]
+                                   1             1             = 
+   134 ALL_PLANES[bd,zv]
+                                   1             1             = 
+   135 ALL_PLANES[bd,rf]
+                                   1             1             = 
+   136 ALL_PLANES[bd,ug]
+                                   1             1             = 
+   137 ALL_PLANES[bd,lo]
+                                   1             1             = 
+   138 ALL_PLANES[bd,to]
+                                   1             1             = 
+   139 ALL_PLANES[bd,jl]
+                                   1             1             = 
+   140 ALL_PLANES[bd,qn]
+                                   1             1             = 
+   141 ALL_PLANES[bd,jm]
+                                   1             1             = 
+   142 ALL_PLANES[bd,wo]
+                                   1             1             = 
+   143 ALL_PLANES[bd,tj]
+                                   1             1             = 
+   144 ALL_PLANES[bd,ow]
+                                   1             1             = 
+   145 ALL_PLANES[bd,ub]
+                                   1             1             = 
+   146 ALL_PLANES[bd,ue]
+                                   1             1             = 
+   147 ALL_PLANES[bd,la]
+                                   1             1             = 
+   148 ALL_PLANES[to,yc]
+                                   1             1             = 
+   149 ALL_PLANES[to,zv]
+                                   1             1             = 
+   150 ALL_PLANES[to,ug]
+                                   1             1             = 
+   151 ALL_PLANES[to,wo]
+                                   1             1             = 
+   152 ALL_PLANES[to,ub]
+                                   1             1             = 
+   153 ALL_PLANES[to,ue]
+                                   1             1             = 
+   154 ALL_PLANES[jl,jy]
+                                   1             1             = 
+   155 ALL_PLANES[jl,yc]
+                                   1             1             = 
+   156 ALL_PLANES[jl,zv]
+                                   1             1             = 
+   157 ALL_PLANES[jl,rf]
+                                   1             1             = 
+   158 ALL_PLANES[jl,ug]
+                                   1             1             = 
+   159 ALL_PLANES[jl,lo]
+                                   1             1             = 
+   160 ALL_PLANES[jl,to]
+                                   1             1             = 
+   161 ALL_PLANES[jl,qn]
+                                   1             1             = 
+   162 ALL_PLANES[jl,jm]
+                                   1             1             = 
+   163 ALL_PLANES[jl,wo]
+                                   1             1             = 
+   164 ALL_PLANES[jl,tj]
+                                   1             1             = 
+   165 ALL_PLANES[jl,ow]
+                                   1             1             = 
+   166 ALL_PLANES[jl,ub]
+                                   1             1             = 
+   167 ALL_PLANES[jl,ue]
+                                   1             1             = 
+   168 ALL_PLANES[jl,la]
+                                   1             1             = 
+   169 ALL_PLANES[qn,yc]
+                                   1             1             = 
+   170 ALL_PLANES[qn,zv]
+                                   1             1             = 
+   171 ALL_PLANES[qn,rf]
+                                   1             1             = 
+   172 ALL_PLANES[qn,ug]
+                                   1             1             = 
+   173 ALL_PLANES[qn,to]
+                                   1             1             = 
+   174 ALL_PLANES[qn,wo]
+                                   1             1             = 
+   175 ALL_PLANES[qn,tj]
+                                   1             1             = 
+   176 ALL_PLANES[qn,ub]
+                                   1             1             = 
+   177 ALL_PLANES[qn,ue]
+                                   1             1             = 
+   178 ALL_PLANES[jm,jy]
+                                   1             1             = 
+   179 ALL_PLANES[jm,yc]
+                                   1             1             = 
+   180 ALL_PLANES[jm,zv]
+                                   1             1             = 
+   181 ALL_PLANES[jm,rf]
+                                   1             1             = 
+   182 ALL_PLANES[jm,ug]
+                                   1             1             = 
+   183 ALL_PLANES[jm,lo]
+                                   1             1             = 
+   184 ALL_PLANES[jm,to]
+                                   1             1             = 
+   185 ALL_PLANES[jm,qn]
+                                   1             1             = 
+   186 ALL_PLANES[jm,wo]
+                                   1             1             = 
+   187 ALL_PLANES[jm,tj]
+                                   1             1             = 
+   188 ALL_PLANES[jm,ow]
+                                   1             1             = 
+   189 ALL_PLANES[jm,ub]
+                                   1             1             = 
+   190 ALL_PLANES[jm,ue]
+                                   1             1             = 
+   191 ALL_PLANES[jm,la]
+                                   1             1             = 
+   192 ALL_PLANES[wo,yc]
+                                   1             1             = 
+   193 ALL_PLANES[wo,zv]
+                                   1             1             = 
+   194 ALL_PLANES[tj,yc]
+                                   1             1             = 
+   195 ALL_PLANES[tj,zv]
+                                   1             1             = 
+   196 ALL_PLANES[tj,ug]
+                                   1             1             = 
+   197 ALL_PLANES[tj,to]
+                                   1             1             = 
+   198 ALL_PLANES[tj,wo]
+                                   1             1             = 
+   199 ALL_PLANES[tj,ub]
+                                   1             1             = 
+   200 ALL_PLANES[tj,ue]
+                                   1             1             = 
+   201 ALL_PLANES[ow,yc]
+                                   1             1             = 
+   202 ALL_PLANES[ow,zv]
+                                   1             1             = 
+   203 ALL_PLANES[ow,rf]
+                                   1             1             = 
+   204 ALL_PLANES[ow,ug]
+                                   1             1             = 
+   205 ALL_PLANES[ow,to]
+                                   1             1             = 
+   206 ALL_PLANES[ow,qn]
+                                   1             1             = 
+   207 ALL_PLANES[ow,wo]
+                                   1             1             = 
+   208 ALL_PLANES[ow,tj]
+                                   1             1             = 
+   209 ALL_PLANES[ow,ub]
+                                   1             1             = 
+   210 ALL_PLANES[ow,ue]
+                                   1             1             = 
+   211 ALL_PLANES[ub,yc]
+                                   1             1             = 
+   212 ALL_PLANES[ub,zv]
+                                   1             1             = 
+   213 ALL_PLANES[ub,ug]
+                                   1             1             = 
+   214 ALL_PLANES[ub,wo]
+                                   1             1             = 
+   215 ALL_PLANES[ub,ue]
+                                   1             1             = 
+   216 ALL_PLANES[ue,yc]
+                                   1             1             = 
+   217 ALL_PLANES[ue,zv]
+                                   1             1             = 
+   218 ALL_PLANES[ue,ug]
+                                   1             1             = 
+   219 ALL_PLANES[ue,wo]
+                                   1             1             = 
+   220 ALL_PLANES[la,yc]
+                                   1             1             = 
+   221 ALL_PLANES[la,zv]
+                                   1             1             = 
+   222 ALL_PLANES[la,rf]
+                                   1             1             = 
+   223 ALL_PLANES[la,ug]
+                                   1             1             = 
+   224 ALL_PLANES[la,lo]
+                                   1             1             = 
+   225 ALL_PLANES[la,to]
+                                   1             1             = 
+   226 ALL_PLANES[la,qn]
+                                   1             1             = 
+   227 ALL_PLANES[la,wo]
+                                   1             1             = 
+   228 ALL_PLANES[la,tj]
+                                   1             1             = 
+   229 ALL_PLANES[la,ow]
+                                   1             1             = 
+   230 ALL_PLANES[la,ub]
+                                   1             1             = 
+   231 ALL_PLANES[la,ue]
+                                   1             1             = 
+   232 TIME_WINDOWS[cx,ff]
+                                  42            -0               
+   233 TIME_WINDOWS[cx,jy]
+                                 358            -0               
+   234 TIME_WINDOWS[cx,yc]
+                                 363            -0               
+   235 TIME_WINDOWS[cx,gn]
+                                 361            -0               
+   236 TIME_WINDOWS[cx,zv]
+                                 380            -0               
+   237 TIME_WINDOWS[cx,rf]
+                                 371            -0               
+   238 TIME_WINDOWS[cx,ug]
+                                 364            -0               
+   239 TIME_WINDOWS[cx,lo]
+                                 383            -0               
+   240 TIME_WINDOWS[cx,bd]
+                                 374            -0               
+   241 TIME_WINDOWS[cx,to]
+                                 103            -0               
+   242 TIME_WINDOWS[cx,jl]
+                                  76            -0               
+   243 TIME_WINDOWS[cx,qn]
+                                 394            -0               
+   244 TIME_WINDOWS[cx,jm]
+                                 369            -0               
+   245 TIME_WINDOWS[cx,wo]
+                                  97            -0               
+   246 TIME_WINDOWS[cx,tj]
+                                 189            -0               
+   247 TIME_WINDOWS[cx,ow]
+                                 378            -0               
+   248 TIME_WINDOWS[cx,ub]
+                                 383            -0               
+   249 TIME_WINDOWS[cx,ue]
+                                 374            -0               
+   250 TIME_WINDOWS[cx,la]
+                                 382            -0               
+   251 TIME_WINDOWS[ff,cx]
+                                 552            -0               
+   252 TIME_WINDOWS[ff,jy]
+                                 480            -0               
+   253 TIME_WINDOWS[ff,yc]
+                                 485            -0               
+   254 TIME_WINDOWS[ff,gn]
+                                 483            -0               
+   255 TIME_WINDOWS[ff,zv]
+                                 502            -0               
+   256 TIME_WINDOWS[ff,rf]
+                                 493            -0               
+   257 TIME_WINDOWS[ff,ug]
+                                 486            -0               
+   258 TIME_WINDOWS[ff,lo]
+                                 505            -0               
+   259 TIME_WINDOWS[ff,bd]
+                                 496            -0               
+   260 TIME_WINDOWS[ff,to]
+                                  58            -0               
+   261 TIME_WINDOWS[ff,jl]
+                                  31            -0               
+   262 TIME_WINDOWS[ff,qn]
+                                 516            -0               
+   263 TIME_WINDOWS[ff,jm]
+                                 491            -0               
+   264 TIME_WINDOWS[ff,wo]
+                                  52            -0               
+   265 TIME_WINDOWS[ff,tj]
+                                 144            -0               
+   266 TIME_WINDOWS[ff,ow]
+                                 500            -0               
+   267 TIME_WINDOWS[ff,ub]
+                                 505            -0               
+   268 TIME_WINDOWS[ff,ue]
+                                 496            -0               
+   269 TIME_WINDOWS[ff,la]
+                                 504            -0               
+   270 TIME_WINDOWS[jy,cx]
+                                 104            -0               
+   271 TIME_WINDOWS[jy,ff]
+                                 149            -0               
+   272 TIME_WINDOWS[jy,yc]
+                                   0            -0               
+   273 TIME_WINDOWS[jy,gn]
+                                   8            -0               
+   274 TIME_WINDOWS[jy,zv]
+                                  32            -0               
+   275 TIME_WINDOWS[jy,rf]
+                                  24            -0               
+   276 TIME_WINDOWS[jy,ug]
+                                  16            -0               
+   277 TIME_WINDOWS[jy,lo]
+                                  40            -0               
+   278 TIME_WINDOWS[jy,bd]
+                                  48            -0               
+   279 TIME_WINDOWS[jy,to]
+                                 210            -0               
+   280 TIME_WINDOWS[jy,jl]
+                                 183            -0               
+   281 TIME_WINDOWS[jy,qn]
+                                  88            -0               
+   282 TIME_WINDOWS[jy,jm]
+                                  56            -0               
+   283 TIME_WINDOWS[jy,wo]
+                                 204            -0               
+   284 TIME_WINDOWS[jy,tj]
+                                 296            -0               
+   285 TIME_WINDOWS[jy,ow]
+                                  72            -0               
+   286 TIME_WINDOWS[jy,ub]
+                                  80            -0               
+   287 TIME_WINDOWS[jy,ue]
+                                  64            -0               
+   288 TIME_WINDOWS[jy,la]
+                                  96            -0               
+   289 TIME_WINDOWS[yc,cx]
+                                  96            -0               
+   290 TIME_WINDOWS[yc,ff]
+                                 141            -0               
+   291 TIME_WINDOWS[yc,jy]
+                                 412            -0               
+   292 TIME_WINDOWS[yc,gn]
+                                   0            -0               
+   293 TIME_WINDOWS[yc,zv]
+                                  24            -0               
+   294 TIME_WINDOWS[yc,rf]
+                                  16            -0               
+   295 TIME_WINDOWS[yc,ug]
+                                   8            -0               
+   296 TIME_WINDOWS[yc,lo]
+                                  32            -0               
+   297 TIME_WINDOWS[yc,bd]
+                                  40            -0               
+   298 TIME_WINDOWS[yc,to]
+                                 202            -0               
+   299 TIME_WINDOWS[yc,jl]
+                                 175            -0               
+   300 TIME_WINDOWS[yc,qn]
+                                  80            -0               
+   301 TIME_WINDOWS[yc,jm]
+                                  48            -0               
+   302 TIME_WINDOWS[yc,wo]
+                                 196            -0               
+   303 TIME_WINDOWS[yc,tj]
+                                 288            -0               
+   304 TIME_WINDOWS[yc,ow]
+                                  64            -0               
+   305 TIME_WINDOWS[yc,ub]
+                                  72            -0               
+   306 TIME_WINDOWS[yc,ue]
+                                  56            -0               
+   307 TIME_WINDOWS[yc,la]
+                                  88            -0               
+   308 TIME_WINDOWS[gn,cx]
+                                  88            -0               
+   309 TIME_WINDOWS[gn,ff]
+                                 133            -0               
+   310 TIME_WINDOWS[gn,jy]
+                                 429            -0               
+   311 TIME_WINDOWS[gn,yc]
+                                 434            -0               
+   312 TIME_WINDOWS[gn,zv]
+                                  16            -0               
+   313 TIME_WINDOWS[gn,rf]
+                                   8            -0               
+   314 TIME_WINDOWS[gn,ug]
+                                   0            -0               
+   315 TIME_WINDOWS[gn,lo]
+                                  24            -0               
+   316 TIME_WINDOWS[gn,bd]
+                                  32            -0               
+   317 TIME_WINDOWS[gn,to]
+                                 194            -0               
+   318 TIME_WINDOWS[gn,jl]
+                                 167            -0               
+   319 TIME_WINDOWS[gn,qn]
+                                  72            -0               
+   320 TIME_WINDOWS[gn,jm]
+                                  40            -0               
+   321 TIME_WINDOWS[gn,wo]
+                                 188            -0               
+   322 TIME_WINDOWS[gn,tj]
+                                 280            -0               
+   323 TIME_WINDOWS[gn,ow]
+                                  56            -0               
+   324 TIME_WINDOWS[gn,ub]
+                                  64            -0               
+   325 TIME_WINDOWS[gn,ue]
+                                  48            -0               
+   326 TIME_WINDOWS[gn,la]
+                                  80            -0               
+   327 TIME_WINDOWS[zv,cx]
+                                  64            -0               
+   328 TIME_WINDOWS[zv,ff]
+                                 109            -0               
+   329 TIME_WINDOWS[zv,jy]
+                                 418            -0               
+   330 TIME_WINDOWS[zv,yc]
+                                 423            -0               
+   331 TIME_WINDOWS[zv,gn]
+                                 421            -0               
+   332 TIME_WINDOWS[zv,rf]
+                                 431            -0               
+   333 TIME_WINDOWS[zv,ug]
+                                 424            -0               
+   334 TIME_WINDOWS[zv,lo]
+                                   0            -0               
+   335 TIME_WINDOWS[zv,bd]
+                                   8            -0               
+   336 TIME_WINDOWS[zv,to]
+                                 170            -0               
+   337 TIME_WINDOWS[zv,jl]
+                                 143            -0               
+   338 TIME_WINDOWS[zv,qn]
+                                  48            -0               
+   339 TIME_WINDOWS[zv,jm]
+                                  16            -0               
+   340 TIME_WINDOWS[zv,wo]
+                                 164            -0               
+   341 TIME_WINDOWS[zv,tj]
+                                 256            -0               
+   342 TIME_WINDOWS[zv,ow]
+                                  32            -0               
+   343 TIME_WINDOWS[zv,ub]
+                                  40            -0               
+   344 TIME_WINDOWS[zv,ue]
+                                  24            -0               
+   345 TIME_WINDOWS[zv,la]
+                                  56            -0               
+   346 TIME_WINDOWS[rf,cx]
+                                  72            -0               
+   347 TIME_WINDOWS[rf,ff]
+                                 117            -0               
+   348 TIME_WINDOWS[rf,jy]
+                                 422            -0               
+   349 TIME_WINDOWS[rf,yc]
+                                 427            -0               
+   350 TIME_WINDOWS[rf,gn]
+                                 425            -0               
+   351 TIME_WINDOWS[rf,zv]
+                                   0            -0               
+   352 TIME_WINDOWS[rf,ug]
+                                 428            -0               
+   353 TIME_WINDOWS[rf,lo]
+                                   8            -0               
+   354 TIME_WINDOWS[rf,bd]
+                                  16            -0               
+   355 TIME_WINDOWS[rf,to]
+                                 178            -0               
+   356 TIME_WINDOWS[rf,jl]
+                                 151            -0               
+   357 TIME_WINDOWS[rf,qn]
+                                  56            -0               
+   358 TIME_WINDOWS[rf,jm]
+                                  24            -0               
+   359 TIME_WINDOWS[rf,wo]
+                                 172            -0               
+   360 TIME_WINDOWS[rf,tj]
+                                 264            -0               
+   361 TIME_WINDOWS[rf,ow]
+                                  40            -0               
+   362 TIME_WINDOWS[rf,ub]
+                                  48            -0               
+   363 TIME_WINDOWS[rf,ue]
+                                  32            -0               
+   364 TIME_WINDOWS[rf,la]
+                                  64            -0               
+   365 TIME_WINDOWS[ug,cx]
+                                  80            -0               
+   366 TIME_WINDOWS[ug,ff]
+                                 125            -0               
+   367 TIME_WINDOWS[ug,jy]
+                                 423            -0               
+   368 TIME_WINDOWS[ug,yc]
+                                 428            -0               
+   369 TIME_WINDOWS[ug,gn]
+                                 426            -0               
+   370 TIME_WINDOWS[ug,zv]
+                                   8            -0               
+   371 TIME_WINDOWS[ug,rf]
+                                   0            -0               
+   372 TIME_WINDOWS[ug,lo]
+                                  16            -0               
+   373 TIME_WINDOWS[ug,bd]
+                                  24            -0               
+   374 TIME_WINDOWS[ug,to]
+                                 186            -0               
+   375 TIME_WINDOWS[ug,jl]
+                                 159            -0               
+   376 TIME_WINDOWS[ug,qn]
+                                  64            -0               
+   377 TIME_WINDOWS[ug,jm]
+                                  32            -0               
+   378 TIME_WINDOWS[ug,wo]
+                                 180            -0               
+   379 TIME_WINDOWS[ug,tj]
+                                 272            -0               
+   380 TIME_WINDOWS[ug,ow]
+                                  48            -0               
+   381 TIME_WINDOWS[ug,ub]
+                                  56            -0               
+   382 TIME_WINDOWS[ug,ue]
+                                  40            -0               
+   383 TIME_WINDOWS[ug,la]
+                                  72            -0               
+   384 TIME_WINDOWS[lo,cx]
+                                  56            -0               
+   385 TIME_WINDOWS[lo,ff]
+                                 101            -0               
+   386 TIME_WINDOWS[lo,jy]
+                                 410            -0               
+   387 TIME_WINDOWS[lo,yc]
+                                 415            -0               
+   388 TIME_WINDOWS[lo,gn]
+                                 413            -0               
+   389 TIME_WINDOWS[lo,zv]
+                                 432            -0               
+   390 TIME_WINDOWS[lo,rf]
+                                 423            -0               
+   391 TIME_WINDOWS[lo,ug]
+                                 416            -0               
+   392 TIME_WINDOWS[lo,bd]
+                                   0            -0               
+   393 TIME_WINDOWS[lo,to]
+                                 162            -0               
+   394 TIME_WINDOWS[lo,jl]
+                                 135            -0               
+   395 TIME_WINDOWS[lo,qn]
+                                  40            -0               
+   396 TIME_WINDOWS[lo,jm]
+                                   8            -0               
+   397 TIME_WINDOWS[lo,wo]
+                                 156            -0               
+   398 TIME_WINDOWS[lo,tj]
+                                 248            -0               
+   399 TIME_WINDOWS[lo,ow]
+                                  24            -0               
+   400 TIME_WINDOWS[lo,ub]
+                                  32            -0               
+   401 TIME_WINDOWS[lo,ue]
+                                  16            -0               
+   402 TIME_WINDOWS[lo,la]
+                                  48            -0               
+   403 TIME_WINDOWS[bd,cx]
+                                  48            -0               
+   404 TIME_WINDOWS[bd,ff]
+                                  93            -0               
+   405 TIME_WINDOWS[bd,jy]
+                                 449            -0               
+   406 TIME_WINDOWS[bd,yc]
+                                 454            -0               
+   407 TIME_WINDOWS[bd,gn]
+                                 452            -0               
+   408 TIME_WINDOWS[bd,zv]
+                                 471            -0               
+   409 TIME_WINDOWS[bd,rf]
+                                 462            -0               
+   410 TIME_WINDOWS[bd,ug]
+                                 455            -0               
+   411 TIME_WINDOWS[bd,lo]
+                                 474            -0               
+   412 TIME_WINDOWS[bd,to]
+                                 154            -0               
+   413 TIME_WINDOWS[bd,jl]
+                                 127            -0               
+   414 TIME_WINDOWS[bd,qn]
+                                  32            -0               
+   415 TIME_WINDOWS[bd,jm]
+                                   0            -0               
+   416 TIME_WINDOWS[bd,wo]
+                                 148            -0               
+   417 TIME_WINDOWS[bd,tj]
+                                 240            -0               
+   418 TIME_WINDOWS[bd,ow]
+                                  16            -0               
+   419 TIME_WINDOWS[bd,ub]
+                                  24            -0               
+   420 TIME_WINDOWS[bd,ue]
+                                   8            -0               
+   421 TIME_WINDOWS[bd,la]
+                                  40            -0               
+   422 TIME_WINDOWS[to,cx]
+                                 554            -0               
+   423 TIME_WINDOWS[to,ff]
+                                 541            -0               
+   424 TIME_WINDOWS[to,jy]
+                                 482            -0               
+   425 TIME_WINDOWS[to,yc]
+                                 487            -0               
+   426 TIME_WINDOWS[to,gn]
+                                 485            -0               
+   427 TIME_WINDOWS[to,zv]
+                                 504            -0               
+   428 TIME_WINDOWS[to,rf]
+                                 495            -0               
+   429 TIME_WINDOWS[to,ug]
+                                 488            -0               
+   430 TIME_WINDOWS[to,lo]
+                                 507            -0               
+   431 TIME_WINDOWS[to,bd]
+                                 498            -0               
+   432 TIME_WINDOWS[to,jl]
+                                 538            -0               
+   433 TIME_WINDOWS[to,qn]
+                                 518            -0               
+   434 TIME_WINDOWS[to,jm]
+                                 493            -0               
+   435 TIME_WINDOWS[to,wo]
+                                 541            -0               
+   436 TIME_WINDOWS[to,tj]
+                                  83            -0               
+   437 TIME_WINDOWS[to,ow]
+                                 502            -0               
+   438 TIME_WINDOWS[to,ub]
+                                 507            -0               
+   439 TIME_WINDOWS[to,ue]
+                                 498            -0               
+   440 TIME_WINDOWS[to,la]
+                                 506            -0               
+   441 TIME_WINDOWS[jl,cx]
+                                 526            -0               
+   442 TIME_WINDOWS[jl,ff]
+                                 513            -0               
+   443 TIME_WINDOWS[jl,jy]
+                                 454            -0               
+   444 TIME_WINDOWS[jl,yc]
+                                 459            -0               
+   445 TIME_WINDOWS[jl,gn]
+                                 457            -0               
+   446 TIME_WINDOWS[jl,zv]
+                                 476            -0               
+   447 TIME_WINDOWS[jl,rf]
+                                 467            -0               
+   448 TIME_WINDOWS[jl,ug]
+                                 460            -0               
+   449 TIME_WINDOWS[jl,lo]
+                                 479            -0               
+   450 TIME_WINDOWS[jl,bd]
+                                 470            -0               
+   451 TIME_WINDOWS[jl,to]
+                                  24            -0               
+   452 TIME_WINDOWS[jl,qn]
+                                 490            -0               
+   453 TIME_WINDOWS[jl,jm]
+                                 465            -0               
+   454 TIME_WINDOWS[jl,wo]
+                                  18            -0               
+   455 TIME_WINDOWS[jl,tj]
+                                 110            -0               
+   456 TIME_WINDOWS[jl,ow]
+                                 474            -0               
+   457 TIME_WINDOWS[jl,ub]
+                                 479            -0               
+   458 TIME_WINDOWS[jl,ue]
+                                 470            -0               
+   459 TIME_WINDOWS[jl,la]
+                                 478            -0               
+   460 TIME_WINDOWS[qn,cx]
+                                   8            -0               
+   461 TIME_WINDOWS[qn,ff]
+                                  53            -0               
+   462 TIME_WINDOWS[qn,jy]
+                                 461            -0               
+   463 TIME_WINDOWS[qn,yc]
+                                 466            -0               
+   464 TIME_WINDOWS[qn,gn]
+                                 464            -0               
+   465 TIME_WINDOWS[qn,zv]
+                                 483            -0               
+   466 TIME_WINDOWS[qn,rf]
+                                 474            -0               
+   467 TIME_WINDOWS[qn,ug]
+                                 467            -0               
+   468 TIME_WINDOWS[qn,lo]
+                                 486            -0               
+   469 TIME_WINDOWS[qn,bd]
+                                 477            -0               
+   470 TIME_WINDOWS[qn,to]
+                                 114            -0               
+   471 TIME_WINDOWS[qn,jl]
+                                  87            -0               
+   472 TIME_WINDOWS[qn,jm]
+                                 472            -0               
+   473 TIME_WINDOWS[qn,wo]
+                                 108            -0               
+   474 TIME_WINDOWS[qn,tj]
+                                 200            -0               
+   475 TIME_WINDOWS[qn,ow]
+                                 481            -0               
+   476 TIME_WINDOWS[qn,ub]
+                                 486            -0               
+   477 TIME_WINDOWS[qn,ue]
+                                 477            -0               
+   478 TIME_WINDOWS[qn,la]
+                                   0            -0               
+   479 TIME_WINDOWS[jm,cx]
+                                  40            -0               
+   480 TIME_WINDOWS[jm,ff]
+                                  85            -0               
+   481 TIME_WINDOWS[jm,jy]
+                                 458            -0               
+   482 TIME_WINDOWS[jm,yc]
+                                 463            -0               
+   483 TIME_WINDOWS[jm,gn]
+                                 461            -0               
+   484 TIME_WINDOWS[jm,zv]
+                                 480            -0               
+   485 TIME_WINDOWS[jm,rf]
+                                 471            -0               
+   486 TIME_WINDOWS[jm,ug]
+                                 464            -0               
+   487 TIME_WINDOWS[jm,lo]
+                                 483            -0               
+   488 TIME_WINDOWS[jm,bd]
+                                 474            -0               
+   489 TIME_WINDOWS[jm,to]
+                                 146            -0               
+   490 TIME_WINDOWS[jm,jl]
+                                 119            -0               
+   491 TIME_WINDOWS[jm,qn]
+                                  24            -0               
+   492 TIME_WINDOWS[jm,wo]
+                                 140            -0               
+   493 TIME_WINDOWS[jm,tj]
+                                 232            -0               
+   494 TIME_WINDOWS[jm,ow]
+                                   8            -0               
+   495 TIME_WINDOWS[jm,ub]
+                                  16            -0               
+   496 TIME_WINDOWS[jm,ue]
+                                   0            -0               
+   497 TIME_WINDOWS[jm,la]
+                                  32            -0               
+   498 TIME_WINDOWS[wo,cx]
+                                 531            -0               
+   499 TIME_WINDOWS[wo,ff]
+                                 518            -0               
+   500 TIME_WINDOWS[wo,jy]
+                                 459            -0               
+   501 TIME_WINDOWS[wo,yc]
+                                 464            -0               
+   502 TIME_WINDOWS[wo,gn]
+                                 462            -0               
+   503 TIME_WINDOWS[wo,zv]
+                                 481            -0               
+   504 TIME_WINDOWS[wo,rf]
+                                 472            -0               
+   505 TIME_WINDOWS[wo,ug]
+                                 465            -0               
+   506 TIME_WINDOWS[wo,lo]
+                                 484            -0               
+   507 TIME_WINDOWS[wo,bd]
+                                 475            -0               
+   508 TIME_WINDOWS[wo,to]
+                                   3            -0               
+   509 TIME_WINDOWS[wo,jl]
+                                 515            -0               
+   510 TIME_WINDOWS[wo,qn]
+                                 495            -0               
+   511 TIME_WINDOWS[wo,jm]
+                                 470            -0               
+   512 TIME_WINDOWS[wo,tj]
+                                  89            -0               
+   513 TIME_WINDOWS[wo,ow]
+                                 479            -0               
+   514 TIME_WINDOWS[wo,ub]
+                                 484            -0               
+   515 TIME_WINDOWS[wo,ue]
+                                 475            -0               
+   516 TIME_WINDOWS[wo,la]
+                                 483            -0               
+   517 TIME_WINDOWS[tj,cx]
+                                 610            -0               
+   518 TIME_WINDOWS[tj,ff]
+                                 597            -0               
+   519 TIME_WINDOWS[tj,jy]
+                                 538            -0               
+   520 TIME_WINDOWS[tj,yc]
+                                 543            -0               
+   521 TIME_WINDOWS[tj,gn]
+                                 541            -0               
+   522 TIME_WINDOWS[tj,zv]
+                                 560            -0               
+   523 TIME_WINDOWS[tj,rf]
+                                 551            -0               
+   524 TIME_WINDOWS[tj,ug]
+                                 544            -0               
+   525 TIME_WINDOWS[tj,lo]
+                                 563            -0               
+   526 TIME_WINDOWS[tj,bd]
+                                 554            -0               
+   527 TIME_WINDOWS[tj,to]
+                                 605            -0               
+   528 TIME_WINDOWS[tj,jl]
+                                 594            -0               
+   529 TIME_WINDOWS[tj,qn]
+                                 574            -0               
+   530 TIME_WINDOWS[tj,jm]
+                                 549            -0               
+   531 TIME_WINDOWS[tj,wo]
+                                 597            -0               
+   532 TIME_WINDOWS[tj,ow]
+                                 558            -0               
+   533 TIME_WINDOWS[tj,ub]
+                                 563            -0               
+   534 TIME_WINDOWS[tj,ue]
+                                 554            -0               
+   535 TIME_WINDOWS[tj,la]
+                                 562            -0               
+   536 TIME_WINDOWS[ow,cx]
+                                  24            -0               
+   537 TIME_WINDOWS[ow,ff]
+                                  69            -0               
+   538 TIME_WINDOWS[ow,jy]
+                                 450            -0               
+   539 TIME_WINDOWS[ow,yc]
+                                 455            -0               
+   540 TIME_WINDOWS[ow,gn]
+                                 453            -0               
+   541 TIME_WINDOWS[ow,zv]
+                                 472            -0               
+   542 TIME_WINDOWS[ow,rf]
+                                 463            -0               
+   543 TIME_WINDOWS[ow,ug]
+                                 456            -0               
+   544 TIME_WINDOWS[ow,lo]
+                                 475            -0               
+   545 TIME_WINDOWS[ow,bd]
+                                 466            -0               
+   546 TIME_WINDOWS[ow,to]
+                                 130            -0               
+   547 TIME_WINDOWS[ow,jl]
+                                 103            -0               
+   548 TIME_WINDOWS[ow,qn]
+                                   8            -0               
+   549 TIME_WINDOWS[ow,jm]
+                                 461            -0               
+   550 TIME_WINDOWS[ow,wo]
+                                 124            -0               
+   551 TIME_WINDOWS[ow,tj]
+                                 216            -0               
+   552 TIME_WINDOWS[ow,ub]
+                                   0            -0               
+   553 TIME_WINDOWS[ow,ue]
+                                 466            -0               
+   554 TIME_WINDOWS[ow,la]
+                                  16            -0               
+   555 TIME_WINDOWS[ub,cx]
+                                  16            -0               
+   556 TIME_WINDOWS[ub,ff]
+                                  61            -0               
+   557 TIME_WINDOWS[ub,jy]
+                                 446            -0               
+   558 TIME_WINDOWS[ub,yc]
+                                 451            -0               
+   559 TIME_WINDOWS[ub,gn]
+                                 449            -0               
+   560 TIME_WINDOWS[ub,zv]
+                                 468            -0               
+   561 TIME_WINDOWS[ub,rf]
+                                 459            -0               
+   562 TIME_WINDOWS[ub,ug]
+                                 452            -0               
+   563 TIME_WINDOWS[ub,lo]
+                                 471            -0               
+   564 TIME_WINDOWS[ub,bd]
+                                 462            -0               
+   565 TIME_WINDOWS[ub,to]
+                                 122            -0               
+   566 TIME_WINDOWS[ub,jl]
+                                  95            -0               
+   567 TIME_WINDOWS[ub,qn]
+                                   0            -0               
+   568 TIME_WINDOWS[ub,jm]
+                                 457            -0               
+   569 TIME_WINDOWS[ub,wo]
+                                 116            -0               
+   570 TIME_WINDOWS[ub,tj]
+                                 208            -0               
+   571 TIME_WINDOWS[ub,ow]
+                                 466            -0               
+   572 TIME_WINDOWS[ub,ue]
+                                 462            -0               
+   573 TIME_WINDOWS[ub,la]
+                                   8            -0               
+   574 TIME_WINDOWS[ue,cx]
+                                  32            -0               
+   575 TIME_WINDOWS[ue,ff]
+                                  77            -0               
+   576 TIME_WINDOWS[ue,jy]
+                                 436            -0               
+   577 TIME_WINDOWS[ue,yc]
+                                 441            -0               
+   578 TIME_WINDOWS[ue,gn]
+                                 439            -0               
+   579 TIME_WINDOWS[ue,zv]
+                                 458            -0               
+   580 TIME_WINDOWS[ue,rf]
+                                 449            -0               
+   581 TIME_WINDOWS[ue,ug]
+                                 442            -0               
+   582 TIME_WINDOWS[ue,lo]
+                                 461            -0               
+   583 TIME_WINDOWS[ue,bd]
+                                 452            -0               
+   584 TIME_WINDOWS[ue,to]
+                                 138            -0               
+   585 TIME_WINDOWS[ue,jl]
+                                 111            -0               
+   586 TIME_WINDOWS[ue,qn]
+                                  16            -0               
+   587 TIME_WINDOWS[ue,jm]
+                                 447            -0               
+   588 TIME_WINDOWS[ue,wo]
+                                 132            -0               
+   589 TIME_WINDOWS[ue,tj]
+                                 224            -0               
+   590 TIME_WINDOWS[ue,ow]
+                                   0            -0               
+   591 TIME_WINDOWS[ue,ub]
+                                   8            -0               
+   592 TIME_WINDOWS[ue,la]
+                                  24            -0               
+   593 TIME_WINDOWS[la,cx]
+                                   0            -0               
+   594 TIME_WINDOWS[la,ff]
+                                  45            -0               
+   595 TIME_WINDOWS[la,jy]
+                                 472            -0               
+   596 TIME_WINDOWS[la,yc]
+                                 477            -0               
+   597 TIME_WINDOWS[la,gn]
+                                 475            -0               
+   598 TIME_WINDOWS[la,zv]
+                                 494            -0               
+   599 TIME_WINDOWS[la,rf]
+                                 485            -0               
+   600 TIME_WINDOWS[la,ug]
+                                 478            -0               
+   601 TIME_WINDOWS[la,lo]
+                                 497            -0               
+   602 TIME_WINDOWS[la,bd]
+                                 488            -0               
+   603 TIME_WINDOWS[la,to]
+                                 106            -0               
+   604 TIME_WINDOWS[la,jl]
+                                  79            -0               
+   605 TIME_WINDOWS[la,qn]
+                                 508            -0               
+   606 TIME_WINDOWS[la,jm]
+                                 483            -0               
+   607 TIME_WINDOWS[la,wo]
+                                 100            -0               
+   608 TIME_WINDOWS[la,tj]
+                                 192            -0               
+   609 TIME_WINDOWS[la,ow]
+                                 492            -0               
+   610 TIME_WINDOWS[la,ub]
+                                 497            -0               
+   611 TIME_WINDOWS[la,ue]
+                                 488            -0               
+   612 LANDING_WAIT[cx]
+                                 201           129           559 
+   613 LANDING_WAIT[ff]
+                                 246           187           726 
+   614 LANDING_WAIT[jy]
+                                  82            82           497 
+   615 LANDING_WAIT[yc]
+                                  90            85           502 
+   616 LANDING_WAIT[gn]
+                                  98            95           527 
+   617 LANDING_WAIT[zv]
+                                 122           100           540 
+   618 LANDING_WAIT[rf]
+                                 114           101           536 
+   619 LANDING_WAIT[ug]
+                                 106           100           529 
+   620 LANDING_WAIT[lo]
+                                 130           105           540 
+   621 LANDING_WAIT[bd]
+                                 138           122           587 
+   622 LANDING_WAIT[to]
+                                 307           240           789 
+   623 LANDING_WAIT[jl]
+                                 280           224           734 
+   624 LANDING_WAIT[qn]
+                                 178           142           639 
+   625 LANDING_WAIT[jm]
+                                 146           135           604 
+   626 LANDING_WAIT[wo]
+                                 301           242           760 
+   627 LANDING_WAIT[tj]
+                                 393           300           931 
+   628 LANDING_WAIT[ow]
+                                 162           142           612 
+   629 LANDING_WAIT[ub]
+                                 170           145           616 
+   630 LANDING_WAIT[ue]
+                                 154           138           590 
+   631 LANDING_WAIT[la]
+                                 186           162           658 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 x[cx]                     201             0               
+     2 x[ff]                     246             0               
+     3 x[jy]                      82             0               
+     4 x[yc]                      90             0               
+     5 x[gn]                      98             0               
+     6 x[zv]                     122             0               
+     7 x[rf]                     114             0               
+     8 x[ug]                     106             0               
+     9 x[lo]                     130             0               
+    10 x[bd]                     138             0               
+    11 x[to]                     307             0               
+    12 x[jl]                     280             0               
+    13 x[qn]                     178             0               
+    14 x[jm]                     146             0               
+    15 x[wo]                     301             0               
+    16 x[tj]                     393             0               
+    17 x[ow]                     162             0               
+    18 x[ub]                     170             0               
+    19 x[ue]                     154             0               
+    20 x[la]                     186             0               
+    21 earliness[cx]
+                                   0             0               
+    22 earliness[ff]
+                                   0             0               
+    23 earliness[jy]
+                                   8             0               
+    24 earliness[yc]
+                                   4             0               
+    25 earliness[gn]
+                                   7             0               
+    26 earliness[zv]
+                                   0             0               
+    27 earliness[rf]
+                                   0             0               
+    28 earliness[ug]
+                                   5             0               
+    29 earliness[lo]
+                                   0             0               
+    30 earliness[bd]
+                                   0             0               
+    31 earliness[to]
+                                   0             0               
+    32 earliness[jl]
+                                   0             0               
+    33 earliness[qn]
+                                   0             0               
+    34 earliness[jm]
+                                   5             0               
+    35 earliness[wo]
+                                   0             0               
+    36 earliness[tj]
+                                   0             0               
+    37 earliness[ow]
+                                   0             0               
+    38 earliness[ub]
+                                   0             0               
+    39 earliness[ue]
+                                   0             0               
+    40 earliness[la]
+                                   0             0               
+    41 lateness[cx]               46             0               
+    42 lateness[ff]                0             0               
+    43 lateness[jy]                0             0               
+    44 lateness[yc]                0             0               
+    45 lateness[gn]                0             0               
+    46 lateness[zv]               10             0               
+    47 lateness[rf]                2             0               
+    48 lateness[ug]                0             0               
+    49 lateness[lo]               13             0               
+    50 lateness[bd]                1             0               
+    51 lateness[to]                0             0               
+    52 lateness[jl]                0             0               
+    53 lateness[qn]               17             0               
+    54 lateness[jm]                0             0               
+    55 lateness[wo]                0             0               
+    56 lateness[tj]                0             0               
+    57 lateness[ow]                3             0               
+    58 lateness[ub]                8             0               
+    59 lateness[ue]                1             0               
+    60 lateness[la]                4             0               
+    61 delta[ff,cx] *              0             0             1 
+    62 delta[cx,ff] *              1             0             1 
+    63 delta[jy,cx] *              1             0             1 
+    64 delta[cx,jy] *              0             0             1 
+    65 delta[yc,cx] *              1             0             1 
+    66 delta[cx,yc] *              0             0             1 
+    67 delta[gn,cx] *              1             0             1 
+    68 delta[cx,gn] *              0             0             1 
+    69 delta[zv,cx] *              1             0             1 
+    70 delta[cx,zv] *              0             0             1 
+    71 delta[rf,cx] *              1             0             1 
+    72 delta[cx,rf] *              0             0             1 
+    73 delta[ug,cx] *              1             0             1 
+    74 delta[cx,ug] *              0             0             1 
+    75 delta[lo,cx] *              1             0             1 
+    76 delta[cx,lo] *              0             0             1 
+    77 delta[to,cx] *              0             0             1 
+    78 delta[cx,to] *              1             0             1 
+    79 delta[jl,cx] *              0             0             1 
+    80 delta[cx,jl] *              1             0             1 
+    81 delta[qn,cx] *              1             0             1 
+    82 delta[cx,qn] *              0             0             1 
+    83 delta[jm,cx] *              1             0             1 
+    84 delta[cx,jm] *              0             0             1 
+    85 delta[wo,cx] *              0             0             1 
+    86 delta[cx,wo] *              1             0             1 
+    87 delta[tj,cx] *              0             0             1 
+    88 delta[cx,tj] *              1             0             1 
+    89 delta[ow,cx] *              1             0             1 
+    90 delta[cx,ow] *              0             0             1 
+    91 delta[ub,cx] *              1             0             1 
+    92 delta[cx,ub] *              0             0             1 
+    93 delta[ue,cx] *              1             0             1 
+    94 delta[cx,ue] *              0             0             1 
+    95 delta[la,cx] *              1             0             1 
+    96 delta[cx,la] *              0             0             1 
+    97 delta[jy,ff] *              1             0             1 
+    98 delta[ff,jy] *              0             0             1 
+    99 delta[yc,ff] *              1             0             1 
+   100 delta[ff,yc] *              0             0             1 
+   101 delta[gn,ff] *              1             0             1 
+   102 delta[ff,gn] *              0             0             1 
+   103 delta[zv,ff] *              1             0             1 
+   104 delta[ff,zv] *              0             0             1 
+   105 delta[rf,ff] *              1             0             1 
+   106 delta[ff,rf] *              0             0             1 
+   107 delta[ug,ff] *              1             0             1 
+   108 delta[ff,ug] *              0             0             1 
+   109 delta[lo,ff] *              1             0             1 
+   110 delta[ff,lo] *              0             0             1 
+   111 delta[to,ff] *              0             0             1 
+   112 delta[ff,to] *              1             0             1 
+   113 delta[jl,ff] *              0             0             1 
+   114 delta[ff,jl] *              1             0             1 
+   115 delta[qn,ff] *              1             0             1 
+   116 delta[ff,qn] *              0             0             1 
+   117 delta[jm,ff] *              1             0             1 
+   118 delta[ff,jm] *              0             0             1 
+   119 delta[wo,ff] *              0             0             1 
+   120 delta[ff,wo] *              1             0             1 
+   121 delta[tj,ff] *              0             0             1 
+   122 delta[ff,tj] *              1             0             1 
+   123 delta[ow,ff] *              1             0             1 
+   124 delta[ff,ow] *              0             0             1 
+   125 delta[ub,ff] *              1             0             1 
+   126 delta[ff,ub] *              0             0             1 
+   127 delta[ue,ff] *              1             0             1 
+   128 delta[ff,ue] *              0             0             1 
+   129 delta[la,ff] *              1             0             1 
+   130 delta[ff,la] *              0             0             1 
+   131 delta[yc,jy] *              0             0             1 
+   132 delta[jy,yc] *              1             0             1 
+   133 delta[zv,jy] *              0             0             1 
+   134 delta[jy,zv] *              1             0             1 
+   135 delta[rf,jy] *              0             0             1 
+   136 delta[jy,rf] *              1             0             1 
+   137 delta[ug,jy] *              0             0             1 
+   138 delta[jy,ug] *              1             0             1 
+   139 delta[lo,jy] *              0             0             1 
+   140 delta[jy,lo] *              1             0             1 
+   141 delta[to,jy] *              0             0             1 
+   142 delta[jy,to] *              1             0             1 
+   143 delta[qn,jy] *              0             0             1 
+   144 delta[jy,qn] *              1             0             1 
+   145 delta[wo,jy] *              0             0             1 
+   146 delta[jy,wo] *              1             0             1 
+   147 delta[tj,jy] *              0             0             1 
+   148 delta[jy,tj] *              1             0             1 
+   149 delta[ow,jy] *              0             0             1 
+   150 delta[jy,ow] *              1             0             1 
+   151 delta[ub,jy] *              0             0             1 
+   152 delta[jy,ub] *              1             0             1 
+   153 delta[ue,jy] *              0             0             1 
+   154 delta[jy,ue] *              1             0             1 
+   155 delta[la,jy] *              0             0             1 
+   156 delta[jy,la] *              1             0             1 
+   157 delta[zv,yc] *              0             0             1 
+   158 delta[yc,zv] *              1             0             1 
+   159 delta[jy,gn] *              1             0             1 
+   160 delta[gn,jy] *              0             0             1 
+   161 delta[yc,gn] *              1             0             1 
+   162 delta[gn,yc] *              0             0             1 
+   163 delta[zv,gn] *              0             0             1 
+   164 delta[gn,zv] *              1             0             1 
+   165 delta[rf,gn] *              0             0             1 
+   166 delta[gn,rf] *              1             0             1 
+   167 delta[ug,gn] *              0             0             1 
+   168 delta[gn,ug] *              1             0             1 
+   169 delta[lo,gn] *              0             0             1 
+   170 delta[gn,lo] *              1             0             1 
+   171 delta[to,gn] *              0             0             1 
+   172 delta[gn,to] *              1             0             1 
+   173 delta[jl,gn] *              0             0             1 
+   174 delta[gn,jl] *              1             0             1 
+   175 delta[qn,gn] *              0             0             1 
+   176 delta[gn,qn] *              1             0             1 
+   177 delta[jm,gn] *              0             0             1 
+   178 delta[gn,jm] *              1             0             1 
+   179 delta[wo,gn] *              0             0             1 
+   180 delta[gn,wo] *              1             0             1 
+   181 delta[tj,gn] *              0             0             1 
+   182 delta[gn,tj] *              1             0             1 
+   183 delta[ow,gn] *              0             0             1 
+   184 delta[gn,ow] *              1             0             1 
+   185 delta[ub,gn] *              0             0             1 
+   186 delta[gn,ub] *              1             0             1 
+   187 delta[ue,gn] *              0             0             1 
+   188 delta[gn,ue] *              1             0             1 
+   189 delta[la,gn] *              0             0             1 
+   190 delta[gn,la] *              1             0             1 
+   191 delta[yc,rf] *              1             0             1 
+   192 delta[rf,yc] *              0             0             1 
+   193 delta[zv,rf] *              0             0             1 
+   194 delta[rf,zv] *              1             0             1 
+   195 delta[ug,rf] *              1             0             1 
+   196 delta[rf,ug] *              0             0             1 
+   197 delta[to,rf] *              0             0             1 
+   198 delta[rf,to] *              1             0             1 
+   199 delta[wo,rf] *              0             0             1 
+   200 delta[rf,wo] *              1             0             1 
+   201 delta[tj,rf] *              0             0             1 
+   202 delta[rf,tj] *              1             0             1 
+   203 delta[ub,rf] *              0             0             1 
+   204 delta[rf,ub] *              1             0             1 
+   205 delta[ue,rf] *              0             0             1 
+   206 delta[rf,ue] *              1             0             1 
+   207 delta[yc,ug] *              1             0             1 
+   208 delta[ug,yc] *              0             0             1 
+   209 delta[zv,ug] *              0             0             1 
+   210 delta[ug,zv] *              1             0             1 
+   211 delta[wo,ug] *              0             0             1 
+   212 delta[ug,wo] *              1             0             1 
+   213 delta[yc,lo] *              1             0             1 
+   214 delta[lo,yc] *              0             0             1 
+   215 delta[zv,lo] *              1             0             1 
+   216 delta[lo,zv] *              0             0             1 
+   217 delta[rf,lo] *              1             0             1 
+   218 delta[lo,rf] *              0             0             1 
+   219 delta[ug,lo] *              1             0             1 
+   220 delta[lo,ug] *              0             0             1 
+   221 delta[to,lo] *              0             0             1 
+   222 delta[lo,to] *              1             0             1 
+   223 delta[qn,lo] *              0             0             1 
+   224 delta[lo,qn] *              1             0             1 
+   225 delta[wo,lo] *              0             0             1 
+   226 delta[lo,wo] *              1             0             1 
+   227 delta[tj,lo] *              0             0             1 
+   228 delta[lo,tj] *              1             0             1 
+   229 delta[ow,lo] *              0             0             1 
+   230 delta[lo,ow] *              1             0             1 
+   231 delta[ub,lo] *              0             0             1 
+   232 delta[lo,ub] *              1             0             1 
+   233 delta[ue,lo] *              0             0             1 
+   234 delta[lo,ue] *              1             0             1 
+   235 delta[cx,bd] *              0             0             1 
+   236 delta[bd,cx] *              1             0             1 
+   237 delta[ff,bd] *              0             0             1 
+   238 delta[bd,ff] *              1             0             1 
+   239 delta[jy,bd] *              1             0             1 
+   240 delta[bd,jy] *              0             0             1 
+   241 delta[yc,bd] *              1             0             1 
+   242 delta[bd,yc] *              0             0             1 
+   243 delta[gn,bd] *              1             0             1 
+   244 delta[bd,gn] *              0             0             1 
+   245 delta[zv,bd] *              1             0             1 
+   246 delta[bd,zv] *              0             0             1 
+   247 delta[rf,bd] *              1             0             1 
+   248 delta[bd,rf] *              0             0             1 
+   249 delta[ug,bd] *              1             0             1 
+   250 delta[bd,ug] *              0             0             1 
+   251 delta[lo,bd] *              1             0             1 
+   252 delta[bd,lo] *              0             0             1 
+   253 delta[to,bd] *              0             0             1 
+   254 delta[bd,to] *              1             0             1 
+   255 delta[jl,bd] *              0             0             1 
+   256 delta[bd,jl] *              1             0             1 
+   257 delta[qn,bd] *              0             0             1 
+   258 delta[bd,qn] *              1             0             1 
+   259 delta[jm,bd] *              0             0             1 
+   260 delta[bd,jm] *              1             0             1 
+   261 delta[wo,bd] *              0             0             1 
+   262 delta[bd,wo] *              1             0             1 
+   263 delta[tj,bd] *              0             0             1 
+   264 delta[bd,tj] *              1             0             1 
+   265 delta[ow,bd] *              0             0             1 
+   266 delta[bd,ow] *              1             0             1 
+   267 delta[ub,bd] *              0             0             1 
+   268 delta[bd,ub] *              1             0             1 
+   269 delta[ue,bd] *              0             0             1 
+   270 delta[bd,ue] *              1             0             1 
+   271 delta[la,bd] *              0             0             1 
+   272 delta[bd,la] *              1             0             1 
+   273 delta[yc,to] *              1             0             1 
+   274 delta[to,yc] *              0             0             1 
+   275 delta[zv,to] *              1             0             1 
+   276 delta[to,zv] *              0             0             1 
+   277 delta[ug,to] *              1             0             1 
+   278 delta[to,ug] *              0             0             1 
+   279 delta[wo,to] *              1             0             1 
+   280 delta[to,wo] *              0             0             1 
+   281 delta[ub,to] *              1             0             1 
+   282 delta[to,ub] *              0             0             1 
+   283 delta[ue,to] *              1             0             1 
+   284 delta[to,ue] *              0             0             1 
+   285 delta[jy,jl] *              1             0             1 
+   286 delta[jl,jy] *              0             0             1 
+   287 delta[yc,jl] *              1             0             1 
+   288 delta[jl,yc] *              0             0             1 
+   289 delta[zv,jl] *              1             0             1 
+   290 delta[jl,zv] *              0             0             1 
+   291 delta[rf,jl] *              1             0             1 
+   292 delta[jl,rf] *              0             0             1 
+   293 delta[ug,jl] *              1             0             1 
+   294 delta[jl,ug] *              0             0             1 
+   295 delta[lo,jl] *              1             0             1 
+   296 delta[jl,lo] *              0             0             1 
+   297 delta[to,jl] *              0             0             1 
+   298 delta[jl,to] *              1             0             1 
+   299 delta[qn,jl] *              1             0             1 
+   300 delta[jl,qn] *              0             0             1 
+   301 delta[jm,jl] *              1             0             1 
+   302 delta[jl,jm] *              0             0             1 
+   303 delta[wo,jl] *              0             0             1 
+   304 delta[jl,wo] *              1             0             1 
+   305 delta[tj,jl] *              0             0             1 
+   306 delta[jl,tj] *              1             0             1 
+   307 delta[ow,jl] *              1             0             1 
+   308 delta[jl,ow] *              0             0             1 
+   309 delta[ub,jl] *              1             0             1 
+   310 delta[jl,ub] *              0             0             1 
+   311 delta[ue,jl] *              1             0             1 
+   312 delta[jl,ue] *              0             0             1 
+   313 delta[la,jl] *              1             0             1 
+   314 delta[jl,la] *              0             0             1 
+   315 delta[yc,qn] *              1             0             1 
+   316 delta[qn,yc] *              0             0             1 
+   317 delta[zv,qn] *              1             0             1 
+   318 delta[qn,zv] *              0             0             1 
+   319 delta[rf,qn] *              1             0             1 
+   320 delta[qn,rf] *              0             0             1 
+   321 delta[ug,qn] *              1             0             1 
+   322 delta[qn,ug] *              0             0             1 
+   323 delta[to,qn] *              0             0             1 
+   324 delta[qn,to] *              1             0             1 
+   325 delta[wo,qn] *              0             0             1 
+   326 delta[qn,wo] *              1             0             1 
+   327 delta[tj,qn] *              0             0             1 
+   328 delta[qn,tj] *              1             0             1 
+   329 delta[ub,qn] *              1             0             1 
+   330 delta[qn,ub] *              0             0             1 
+   331 delta[ue,qn] *              1             0             1 
+   332 delta[qn,ue] *              0             0             1 
+   333 delta[jy,jm] *              1             0             1 
+   334 delta[jm,jy] *              0             0             1 
+   335 delta[yc,jm] *              1             0             1 
+   336 delta[jm,yc] *              0             0             1 
+   337 delta[zv,jm] *              1             0             1 
+   338 delta[jm,zv] *              0             0             1 
+   339 delta[rf,jm] *              1             0             1 
+   340 delta[jm,rf] *              0             0             1 
+   341 delta[ug,jm] *              1             0             1 
+   342 delta[jm,ug] *              0             0             1 
+   343 delta[lo,jm] *              1             0             1 
+   344 delta[jm,lo] *              0             0             1 
+   345 delta[to,jm] *              0             0             1 
+   346 delta[jm,to] *              1             0             1 
+   347 delta[qn,jm] *              0             0             1 
+   348 delta[jm,qn] *              1             0             1 
+   349 delta[wo,jm] *              0             0             1 
+   350 delta[jm,wo] *              1             0             1 
+   351 delta[tj,jm] *              0             0             1 
+   352 delta[jm,tj] *              1             0             1 
+   353 delta[ow,jm] *              0             0             1 
+   354 delta[jm,ow] *              1             0             1 
+   355 delta[ub,jm] *              0             0             1 
+   356 delta[jm,ub] *              1             0             1 
+   357 delta[ue,jm] *              0             0             1 
+   358 delta[jm,ue] *              1             0             1 
+   359 delta[la,jm] *              0             0             1 
+   360 delta[jm,la] *              1             0             1 
+   361 delta[yc,wo] *              1             0             1 
+   362 delta[wo,yc] *              0             0             1 
+   363 delta[zv,wo] *              1             0             1 
+   364 delta[wo,zv] *              0             0             1 
+   365 delta[yc,tj] *              1             0             1 
+   366 delta[tj,yc] *              0             0             1 
+   367 delta[zv,tj] *              1             0             1 
+   368 delta[tj,zv] *              0             0             1 
+   369 delta[ug,tj] *              1             0             1 
+   370 delta[tj,ug] *              0             0             1 
+   371 delta[to,tj] *              1             0             1 
+   372 delta[tj,to] *              0             0             1 
+   373 delta[wo,tj] *              1             0             1 
+   374 delta[tj,wo] *              0             0             1 
+   375 delta[ub,tj] *              1             0             1 
+   376 delta[tj,ub] *              0             0             1 
+   377 delta[ue,tj] *              1             0             1 
+   378 delta[tj,ue] *              0             0             1 
+   379 delta[yc,ow] *              1             0             1 
+   380 delta[ow,yc] *              0             0             1 
+   381 delta[zv,ow] *              1             0             1 
+   382 delta[ow,zv] *              0             0             1 
+   383 delta[rf,ow] *              1             0             1 
+   384 delta[ow,rf] *              0             0             1 
+   385 delta[ug,ow] *              1             0             1 
+   386 delta[ow,ug] *              0             0             1 
+   387 delta[to,ow] *              0             0             1 
+   388 delta[ow,to] *              1             0             1 
+   389 delta[qn,ow] *              0             0             1 
+   390 delta[ow,qn] *              1             0             1 
+   391 delta[wo,ow] *              0             0             1 
+   392 delta[ow,wo] *              1             0             1 
+   393 delta[tj,ow] *              0             0             1 
+   394 delta[ow,tj] *              1             0             1 
+   395 delta[ub,ow] *              0             0             1 
+   396 delta[ow,ub] *              1             0             1 
+   397 delta[ue,ow] *              1             0             1 
+   398 delta[ow,ue] *              0             0             1 
+   399 delta[yc,ub] *              1             0             1 
+   400 delta[ub,yc] *              0             0             1 
+   401 delta[zv,ub] *              1             0             1 
+   402 delta[ub,zv] *              0             0             1 
+   403 delta[ug,ub] *              1             0             1 
+   404 delta[ub,ug] *              0             0             1 
+   405 delta[wo,ub] *              0             0             1 
+   406 delta[ub,wo] *              1             0             1 
+   407 delta[ue,ub] *              1             0             1 
+   408 delta[ub,ue] *              0             0             1 
+   409 delta[yc,ue] *              1             0             1 
+   410 delta[ue,yc] *              0             0             1 
+   411 delta[zv,ue] *              1             0             1 
+   412 delta[ue,zv] *              0             0             1 
+   413 delta[ug,ue] *              1             0             1 
+   414 delta[ue,ug] *              0             0             1 
+   415 delta[wo,ue] *              0             0             1 
+   416 delta[ue,wo] *              1             0             1 
+   417 delta[yc,la] *              1             0             1 
+   418 delta[la,yc] *              0             0             1 
+   419 delta[zv,la] *              1             0             1 
+   420 delta[la,zv] *              0             0             1 
+   421 delta[rf,la] *              1             0             1 
+   422 delta[la,rf] *              0             0             1 
+   423 delta[ug,la] *              1             0             1 
+   424 delta[la,ug] *              0             0             1 
+   425 delta[lo,la] *              1             0             1 
+   426 delta[la,lo] *              0             0             1 
+   427 delta[to,la] *              0             0             1 
+   428 delta[la,to] *              1             0             1 
+   429 delta[qn,la] *              1             0             1 
+   430 delta[la,qn] *              0             0             1 
+   431 delta[wo,la] *              0             0             1 
+   432 delta[la,wo] *              1             0             1 
+   433 delta[tj,la] *              0             0             1 
+   434 delta[la,tj] *              1             0             1 
+   435 delta[ow,la] *              1             0             1 
+   436 delta[la,ow] *              0             0             1 
+   437 delta[ub,la] *              1             0             1 
+   438 delta[la,ub] *              0             0             1 
+   439 delta[ue,la] *              1             0             1 
+   440 delta[la,ue] *              0             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

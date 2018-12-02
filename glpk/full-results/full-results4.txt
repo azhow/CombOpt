@@ -1,0 +1,79 @@
+GLPSOL: GLPK LP/MIP Solver, v4.55
+Parameter(s) specified in the command line:
+ --math alp_v2.mod --data airland4.dat --tmlim 3600 --memlim 2000 --output
+ results4.txt
+Reading model section from alp_v2.mod...
+41 lines were read
+Reading data section from airland4.dat...
+airland4.dat:50: warning: final NL missing before end of file
+50 lines were read
+Generating cost...
+Generating T_MINUS_X...
+Generating X_MINUS_T...
+Generating ALL_PLANES...
+Generating TIME_WINDOWS...
+Generating LANDING_WAIT...
+Model has been successfully generated
+GLPK Integer Optimizer, v4.55
+631 rows, 440 columns, 2040 non-zeros
+380 integer variables, all of which are binary
+Preprocessing...
+610 rows, 440 columns, 1980 non-zeros
+380 integer variables, all of which are binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  7.580e+02  ratio =  7.580e+02
+GM: min|aij| =  7.392e-02  max|aij| =  1.353e+01  ratio =  1.830e+02
+EQ: min|aij| =  5.464e-03  max|aij| =  1.000e+00  ratio =  1.830e+02
+2N: min|aij| =  5.859e-03  max|aij| =  1.641e+00  ratio =  2.800e+02
+Constructing initial basis...
+Size of triangular part is 610
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.55
+610 rows, 440 columns, 1980 non-zeros
+      0: obj =   0.000000000e+00  infeas =  1.227e+02 (0)
+*   136: obj =   3.010000000e+03  infeas =  0.000e+00 (0)
+*   151: obj =  -5.916456789e-30  infeas =  2.465e-32 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
++   151: mip =     not found yet >=              -inf        (1; 0)
++   782: >>>>>   1.735000000e+04 >=   6.600000000e+02  96.2% (197; 5)
++  2921: >>>>>   1.096000000e+04 >=   8.900000000e+02  91.9% (741; 66)
++  3130: >>>>>   5.500000000e+03 >=   9.400000000e+02  82.9% (760; 135)
++ 12925: >>>>>   4.540000000e+03 >=   1.370000000e+03  69.8% (3040; 815)
++ 19236: >>>>>   4.400000000e+03 >=   1.430000000e+03  67.5% (3738; 1706)
++ 19764: >>>>>   4.240000000e+03 >=   1.430000000e+03  66.3% (3630; 2008)
++ 19829: >>>>>   4.000000000e+03 >=   1.430000000e+03  64.2% (3405; 2392)
++ 23369: >>>>>   3.700000000e+03 >=   1.480000000e+03  60.0% (3678; 3113)
++ 34457: >>>>>   3.480000000e+03 >=   1.610000000e+03  53.7% (4844; 4618)
++ 50012: >>>>>   3.340000000e+03 >=   1.720000000e+03  48.5% (6512; 6577)
++ 50863: >>>>>   3.250000000e+03 >=   1.730000000e+03  46.8% (6279; 7310)
++ 50894: >>>>>   3.120000000e+03 >=   1.730000000e+03  44.6% (5989; 7828)
++ 70910: mip =   3.120000000e+03 >=   1.830000000e+03  41.3% (7631; 10049)
++ 80145: >>>>>   3.010000000e+03 >=   1.880000000e+03  37.5% (8643; 10630)
++ 80169: >>>>>   2.880000000e+03 >=   1.880000000e+03  34.7% (7931; 11890)
++ 99647: mip =   2.880000000e+03 >=   1.950000000e+03  32.3% (8701; 15165)
++113892: >>>>>   2.650000000e+03 >=   2.000000000e+03  24.5% (9904; 16475)
++130872: mip =   2.650000000e+03 >=   2.060000000e+03  22.3% (8010; 23959)
++145834: mip =   2.650000000e+03 >=   2.100000000e+03  20.8% (8915; 25826)
++147976: >>>>>   2.520000000e+03 >=   2.110000000e+03  16.3% (9019; 26186)
++164204: mip =   2.520000000e+03 >=   2.160000000e+03  14.3% (7415; 33038)
++178150: mip =   2.520000000e+03 >=   2.190000000e+03  13.1% (8008; 35356)
++191329: mip =   2.520000000e+03 >=   2.220000000e+03  11.9% (8531; 37705)
+Time used: 60.0 secs.  Memory used: 35.5 Mb.
++203733: mip =   2.520000000e+03 >=   2.250000000e+03  10.7% (8814; 40345)
++215795: mip =   2.520000000e+03 >=   2.270000000e+03   9.9% (9032; 42873)
++226728: mip =   2.520000000e+03 >=   2.300000000e+03   8.7% (8824; 46242)
++237387: mip =   2.520000000e+03 >=   2.320000000e+03   7.9% (8527; 49684)
++247848: mip =   2.520000000e+03 >=   2.340000000e+03   7.1% (8218; 53378)
++259351: mip =   2.520000000e+03 >=   2.370000000e+03   6.0% (7675; 57657)
++270702: mip =   2.520000000e+03 >=   2.390000000e+03   5.2% (7075; 62539)
++282122: mip =   2.520000000e+03 >=   2.410000000e+03   4.4% (6295; 68961)
++294230: mip =   2.520000000e+03 >=   2.430000000e+03   3.6% (5244; 77565)
++309120: mip =   2.520000000e+03 >=   2.460000000e+03   2.4% (3612; 89721)
++323952: mip =   2.520000000e+03 >=   2.490000000e+03   1.2% (1784; 107198)
++338109: mip =   2.520000000e+03 >=     tree is empty   0.0% (0; 131873)
+INTEGER OPTIMAL SOLUTION FOUND
+Time used:   117.6 secs
+Memory used: 43.7 Mb (45785311 bytes)
+Writing MIP solution to 'results4.txt'...
+

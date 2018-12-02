@@ -1,0 +1,184 @@
+GLPSOL: GLPK LP/MIP Solver, v4.55
+Parameter(s) specified in the command line:
+ --math alp_v2.mod --data airland13.dat --tmlim 3600 --memlim 2000 --output
+ results13.sol
+Reading model section from alp_v2.mod...
+41 lines were read
+Reading data section from airland13.dat...
+airland13.dat:1010: warning: final NL missing before end of file
+1010 lines were read
+Generating cost...
+Generating T_MINUS_X...
+Generating X_MINUS_T...
+Generating ALL_PLANES...
+Generating TIME_WINDOWS...
+Generating LANDING_WAIT...
+Model has been successfully generated
+GLPK Integer Optimizer, v4.55
+375751 rows, 251000 columns, 1250998 non-zeros
+249500 integer variables, all of which are binary
+Preprocessing...
+13013 constraint coefficient(s) were reduced
+138721 rows, 44350 columns, 363140 non-zeros
+42850 integer variables, all of which are binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  1.511e+04  ratio =  1.511e+04
+GM: min|aij| =  1.944e-01  max|aij| =  5.145e+00  ratio =  2.647e+01
+EQ: min|aij| =  3.778e-02  max|aij| =  1.000e+00  ratio =  2.647e+01
+2N: min|aij| =  2.197e-02  max|aij| =  1.770e+00  ratio =  8.053e+01
+Constructing initial basis...
+Size of triangular part is 138721
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.55
+138721 rows, 44350 columns, 363140 non-zeros
+      0: obj =   0.000000000e+00  infeas =  1.324e+05 (0)
+    500: obj =   5.465943000e+04  infeas =  1.215e+05 (0)
+   1000: obj =   7.723022000e+04  infeas =  1.187e+05 (0)
+   1500: obj =   8.947127000e+04  infeas =  1.171e+05 (0)
+   2000: obj =   9.231537000e+04  infeas =  1.166e+05 (0)
+   2500: obj =   9.480212000e+04  infeas =  1.162e+05 (0)
+   3000: obj =   1.063000600e+05  infeas =  1.143e+05 (0)
+   3500: obj =   1.224199200e+05  infeas =  1.127e+05 (0)
+   4000: obj =   1.499115700e+05  infeas =  1.094e+05 (0)
+   4500: obj =   1.741014600e+05  infeas =  1.078e+05 (0)
+   5000: obj =   1.741226000e+05  infeas =  1.078e+05 (0)
+   5500: obj =   1.741344500e+05  infeas =  1.078e+05 (0)
+   6000: obj =   1.748403900e+05  infeas =  1.078e+05 (0)
+   6500: obj =   1.800062600e+05  infeas =  1.074e+05 (0)
+   7000: obj =   1.835433252e+05  infeas =  1.071e+05 (0)
+   7500: obj =   1.904563200e+05  infeas =  1.066e+05 (0)
+   8000: obj =   1.937837700e+05  infeas =  1.061e+05 (0)
+   8500: obj =   2.105861700e+05  infeas =  1.046e+05 (0)
+   9000: obj =   2.114771900e+05  infeas =  1.045e+05 (0)
+   9500: obj =   2.238509800e+05  infeas =  1.037e+05 (0)
+  10000: obj =   2.349703700e+05  infeas =  1.024e+05 (0)
+  10500: obj =   2.536774400e+05  infeas =  1.015e+05 (0)
+  11000: obj =   2.588401800e+05  infeas =  1.010e+05 (0)
+  11500: obj =   2.737733336e+05  infeas =  9.993e+04 (0)
+  12000: obj =   3.161717836e+05  infeas =  9.803e+04 (0)
+  12500: obj =   3.580647236e+05  infeas =  9.681e+04 (0)
+  13000: obj =   3.864611736e+05  infeas =  9.548e+04 (0)
+  13500: obj =   4.042950828e+05  infeas =  9.509e+04 (0)
+  14000: obj =   4.239289828e+05  infeas =  9.340e+04 (0)
+  14500: obj =   4.457609117e+05  infeas =  9.247e+04 (0)
+  15000: obj =   4.488333980e+05  infeas =  8.839e+04 (0)
+  15500: obj =   4.714998628e+05  infeas =  8.402e+04 (0)
+  16000: obj =   4.718230528e+05  infeas =  7.717e+04 (0)
+  16500: obj =   4.734454828e+05  infeas =  7.120e+04 (0)
+  17000: obj =   5.190690021e+05  infeas =  6.737e+04 (0)
+  17500: obj =   5.456140931e+05  infeas =  6.281e+04 (0)
+  18000: obj =   5.465295431e+05  infeas =  5.715e+04 (0)
+  18500: obj =   5.517732648e+05  infeas =  5.464e+04 (0)
+  19000: obj =   5.517520227e+05  infeas =  5.244e+04 (0)
+  19500: obj =   5.550684020e+05  infeas =  4.989e+04 (0)
+  20000: obj =   5.588405381e+05  infeas =  4.387e+04 (0)
+  20500: obj =   5.624195353e+05  infeas =  4.072e+04 (0)
+  21000: obj =   5.621394228e+05  infeas =  3.558e+04 (0)
+  21500: obj =   5.632835472e+05  infeas =  3.091e+04 (0)
+  22000: obj =   5.632835472e+05  infeas =  2.545e+04 (0)
+  22500: obj =   5.639701460e+05  infeas =  2.044e+04 (0)
+  23000: obj =   5.640037467e+05  infeas =  1.542e+04 (0)
+  23500: obj =   5.633562486e+05  infeas =  1.106e+04 (0)
+  24000: obj =   5.632832260e+05  infeas =  6.577e+03 (0)
+  24500: obj =   5.634275397e+05  infeas =  2.913e+03 (0)
+  25000: obj =   5.655978730e+05  infeas =  2.099e+02 (0)
+* 25067: obj =   5.655978730e+05  infeas =  1.997e-10 (0)
+* 25500: obj =   5.405404630e+05  infeas =  1.539e-10 (0)
+* 26000: obj =   4.633371459e+05  infeas =  5.610e-11 (0)
+* 26500: obj =   3.982874090e+05  infeas =  4.597e-11 (0)
+* 27000: obj =   3.289594951e+05  infeas =  1.341e-11 (0)
+* 27500: obj =   2.344515123e+05  infeas =  8.785e-12 (0)
+* 28000: obj =   1.421927286e+05  infeas =  5.265e-12 (0)
+* 28500: obj =   7.379246372e+04  infeas =  8.207e-13 (0)
+* 29000: obj =   8.165890000e+03  infeas =  2.865e-15 (0)
+* 29104: obj =   0.000000000e+00  infeas =  1.534e-30 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
++ 29104: mip =     not found yet >=              -inf        (1; 0)
+| 31500: obj =   0.000000000e+00  infeas =  0.000e+00 (17243)
+| 32000: obj =   0.000000000e+00  infeas =  0.000e+00 (16744)
+| 32500: obj =   0.000000000e+00  infeas =  0.000e+00 (16244)
+| 33000: obj =   0.000000000e+00  infeas =  0.000e+00 (15744)
+| 33500: obj =   0.000000000e+00  infeas =  0.000e+00 (15247)
+| 34000: obj =   0.000000000e+00  infeas =  0.000e+00 (14754)
+Warning: dual degeneracy; switching to primal simplex
+* 36500: obj =   1.153089000e+04  infeas =  3.167e-14 (13227)
+* 36617: obj =   0.000000000e+00  infeas =  0.000e+00 (13227)
++ 36617: mip =     not found yet >=   0.000000000e+00        (2; 0)
+Time used: 103.9 secs.  Memory used: 483.6 Mb.
++ 36748: mip =     not found yet >=   0.000000000e+00        (3; 0)
+Time used: 175.0 secs.  Memory used: 483.8 Mb.
++ 36749: mip =     not found yet >=   0.000000000e+00        (4; 0)
+Time used: 262.8 secs.  Memory used: 483.8 Mb.
++ 36750: mip =     not found yet >=   0.000000000e+00        (5; 0)
+Time used: 370.8 secs.  Memory used: 483.8 Mb.
++ 36751: mip =     not found yet >=   0.000000000e+00        (6; 0)
+Time used: 475.0 secs.  Memory used: 483.8 Mb.
++ 36752: mip =     not found yet >=   0.000000000e+00        (7; 0)
+Time used: 579.1 secs.  Memory used: 483.8 Mb.
++ 36753: mip =     not found yet >=   0.000000000e+00        (8; 0)
+Time used: 683.8 secs.  Memory used: 483.8 Mb.
++ 36754: mip =     not found yet >=   0.000000000e+00        (9; 0)
+Time used: 787.3 secs.  Memory used: 483.8 Mb.
++ 36755: mip =     not found yet >=   0.000000000e+00        (10; 0)
+Time used: 891.5 secs.  Memory used: 483.8 Mb.
++ 36756: mip =     not found yet >=   0.000000000e+00        (11; 0)
+Time used: 995.3 secs.  Memory used: 483.8 Mb.
++ 36757: mip =     not found yet >=   0.000000000e+00        (12; 0)
+Time used: 1099.1 secs.  Memory used: 483.8 Mb.
++ 36758: mip =     not found yet >=   0.000000000e+00        (13; 0)
+Time used: 1202.7 secs.  Memory used: 483.8 Mb.
++ 36759: mip =     not found yet >=   0.000000000e+00        (14; 0)
+Time used: 1306.4 secs.  Memory used: 483.8 Mb.
++ 36760: mip =     not found yet >=   0.000000000e+00        (15; 0)
+Time used: 1410.1 secs.  Memory used: 483.8 Mb.
++ 36761: mip =     not found yet >=   0.000000000e+00        (16; 0)
+Time used: 1515.5 secs.  Memory used: 483.8 Mb.
++ 36762: mip =     not found yet >=   0.000000000e+00        (17; 0)
+Time used: 1620.8 secs.  Memory used: 483.8 Mb.
++ 36763: mip =     not found yet >=   0.000000000e+00        (18; 0)
+Time used: 1725.4 secs.  Memory used: 483.8 Mb.
++ 36764: mip =     not found yet >=   0.000000000e+00        (19; 0)
+Time used: 1828.6 secs.  Memory used: 483.8 Mb.
++ 36765: mip =     not found yet >=   0.000000000e+00        (20; 0)
+Time used: 1931.6 secs.  Memory used: 483.8 Mb.
++ 36766: mip =     not found yet >=   0.000000000e+00        (21; 0)
+Time used: 2036.3 secs.  Memory used: 483.8 Mb.
++ 36767: mip =     not found yet >=   0.000000000e+00        (22; 0)
+Time used: 2141.2 secs.  Memory used: 483.8 Mb.
++ 36768: mip =     not found yet >=   0.000000000e+00        (23; 0)
+Time used: 2244.8 secs.  Memory used: 483.8 Mb.
++ 36769: mip =     not found yet >=   0.000000000e+00        (24; 0)
+Time used: 2348.3 secs.  Memory used: 483.8 Mb.
++ 36770: mip =     not found yet >=   0.000000000e+00        (25; 0)
+Time used: 2451.4 secs.  Memory used: 483.8 Mb.
++ 36771: mip =     not found yet >=   0.000000000e+00        (26; 0)
+Time used: 2555.0 secs.  Memory used: 483.8 Mb.
++ 36772: mip =     not found yet >=   0.000000000e+00        (27; 0)
+Time used: 2658.6 secs.  Memory used: 483.8 Mb.
++ 36773: mip =     not found yet >=   0.000000000e+00        (28; 0)
+Time used: 2760.3 secs.  Memory used: 483.8 Mb.
++ 36774: mip =     not found yet >=   0.000000000e+00        (29; 0)
+Time used: 2862.3 secs.  Memory used: 483.8 Mb.
++ 36775: mip =     not found yet >=   0.000000000e+00        (30; 0)
+Time used: 2963.3 secs.  Memory used: 483.8 Mb.
++ 36776: mip =     not found yet >=   0.000000000e+00        (31; 0)
+Time used: 3064.6 secs.  Memory used: 483.8 Mb.
++ 36777: mip =     not found yet >=   0.000000000e+00        (32; 0)
+Time used: 3166.5 secs.  Memory used: 483.8 Mb.
++ 36778: mip =     not found yet >=   0.000000000e+00        (33; 0)
+Time used: 3269.0 secs.  Memory used: 483.8 Mb.
++ 36779: mip =     not found yet >=   0.000000000e+00        (34; 0)
+Time used: 3370.1 secs.  Memory used: 483.8 Mb.
++ 36780: mip =     not found yet >=   0.000000000e+00        (35; 0)
+Time used: 3471.0 secs.  Memory used: 483.8 Mb.
++ 36781: mip =     not found yet >=   0.000000000e+00        (36; 0)
+Time used: 3570.3 secs.  Memory used: 483.8 Mb.
++ 36782: mip =     not found yet >=   0.000000000e+00        (37; 0)
+Time used: 3660.6 secs.  Memory used: 483.8 Mb.
++ 36782: mip =     not found yet >=   0.000000000e+00        (37; 0)
+TIME LIMIT EXCEEDED; SEARCH TERMINATED
+Time used:   3776.0 secs
+Memory used: 549.7 Mb (576401951 bytes)
+Writing MIP solution to 'results13.sol'...
+

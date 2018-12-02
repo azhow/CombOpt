@@ -1,0 +1,47 @@
+GLPSOL: GLPK LP/MIP Solver, v4.55
+Parameter(s) specified in the command line:
+ --math alp_v2.mod --data airland7.dat --tmlim 3600 --memlim 2000 --output
+ results7.txt
+Reading model section from alp_v2.mod...
+41 lines were read
+Reading data section from airland7.dat...
+airland7.dat:98: warning: final NL missing before end of file
+98 lines were read
+Generating cost...
+Generating T_MINUS_X...
+Generating X_MINUS_T...
+Generating ALL_PLANES...
+Generating TIME_WINDOWS...
+Generating LANDING_WAIT...
+Model has been successfully generated
+GLPK Integer Optimizer, v4.55
+2971 rows, 2024 columns, 9768 non-zeros
+1892 integer variables, all of which are binary
+Preprocessing...
+69 constraint coefficient(s) were reduced
+576 rows, 431 columns, 1760 non-zeros
+304 integer variables, all of which are binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  1.338e+03  ratio =  1.338e+03
+GM: min|aij| =  3.162e-01  max|aij| =  3.162e+00  ratio =  1.000e+01
+EQ: min|aij| =  1.000e-01  max|aij| =  1.000e+00  ratio =  1.000e+01
+2N: min|aij| =  6.250e-02  max|aij| =  1.723e+00  ratio =  2.756e+01
+Constructing initial basis...
+Size of triangular part is 576
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.55
+576 rows, 431 columns, 1760 non-zeros
+      0: obj =   2.500000000e+01  infeas =  1.852e+03 (0)
+*   113: obj =   3.928000000e+03  infeas =  0.000e+00 (0)
+*   147: obj =   6.600000000e+01  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
++   147: mip =     not found yet >=              -inf        (1; 0)
++  2661: >>>>>   1.660000000e+03 >=   6.600000000e+02  60.2% (535; 410)
++  5402: >>>>>   1.550000000e+03 >=   8.750000000e+02  43.5% (1003; 991)
++ 23325: mip =   1.550000000e+03 >=     tree is empty   0.0% (0; 15747)
+INTEGER OPTIMAL SOLUTION FOUND
+Time used:   4.3 secs
+Memory used: 21.8 Mb (22809312 bytes)
+Writing MIP solution to 'results7.txt'...
+
