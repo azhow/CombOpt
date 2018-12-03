@@ -18,8 +18,9 @@ int main(int argc, char* argv[])
 		flights.push_back(flight::CFlight(appTime, minTime, idealTime, maxTime, earlyCost, lateCost, freezeTime));
     }
 
+	int randSeed = std::strtol(argv[2], NULL, 10);
 	// Set random seed
-	std::srand((int)argv[2]);
+	std::srand(randSeed);
 	//std::srand(time(NULL));
 
 	clock_t start = clock();
