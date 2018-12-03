@@ -43,6 +43,7 @@ namespace GA
 		calculatePopulationFitness();
 		// Sorts population on ascending order based on their fitness
 		std::sort(m_population.begin(), m_population.end(), less_than_solution());
+		std::cout << "Initial: " << m_population[0].getSolutionValue() << std::endl;
 	}
 
 	// Default destructor
@@ -159,11 +160,13 @@ namespace GA
 
 			if (m_debugFlag)
 			{
-				std::cout << "Gen: " << generation << std::endl;
-				std::cout << "\tBest: " << bestValue << "\n\tCurrent best: " << currentValue << std::endl;
+				//std::cout << "Gen: " << generation << std::endl;
+				//std::cout << "\tBest: " << bestValue << "\n\tCurrent best: " << currentValue << std::endl;
 			}
 			generation++;
+			m_mutationRate *= 0.95;
 		}
+		std::cout << "Best: " << bestValue << std::endl;
 
 		return true;
 	}

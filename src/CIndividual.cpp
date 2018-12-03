@@ -24,7 +24,7 @@ namespace GA
 					gene.mp_appTime, gene.mp_minTime, gene.mp_idealTime, gene.mp_maxTime,
 					gene.mp_earlyCost, gene.mp_lateCost, gene.mp_timeBetweenFlights);
 
-				flight.mp_actualLandingTime = (std::rand() % static_cast<int>(flight.mp_maxTime - flight.mp_minTime)) + flight.mp_minTime;
+				(flight.mp_maxTime != flight.mp_minTime) ? (flight.mp_actualLandingTime = (std::rand() % static_cast<int>(flight.mp_maxTime - flight.mp_minTime)) + flight.mp_minTime) : 0;
 
 				m_genome.push_back(flight);
 			}
@@ -66,7 +66,8 @@ namespace GA
 			double op = static_cast<double>(std::rand()) / RAND_MAX;
 			if(mutationChance > op)
 			{
-				gene.mp_actualLandingTime = (std::rand() % static_cast<int>(gene.mp_maxTime - gene.mp_minTime)) + gene.mp_minTime;
+				(gene.mp_maxTime != gene.mp_minTime) ? (gene.mp_actualLandingTime = (std::rand() % static_cast<int>(gene.mp_maxTime - gene.mp_minTime)) + gene.mp_minTime) : 0;
+				//gene.mp_actualLandingTime = (std::rand() % static_cast<int>(gene.mp_maxTime - gene.mp_minTime)) + gene.mp_minTime;
 			}
 		}
 
@@ -77,7 +78,7 @@ namespace GA
     bool
         CIndividual::calculateFitness()
     {
-        const double penaltyValue = 1;
+        const double penaltyValue = 30;
         bool bStatus(true);
         double fitness = 0;
         int numOfViolations = 0;
