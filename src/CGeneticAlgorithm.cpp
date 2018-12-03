@@ -190,7 +190,7 @@ namespace GA
 		std::vector<CIndividual> newGen;
 
 		// Each crossover adds 2 to the population
-		for (int i = 0; i < m_populationSize/2; i++)
+		for (unsigned int i = 0; i < m_populationSize/2; i++)
 		{
 			crossover(selection(), selection(), newGen);
 		}
