@@ -17,6 +17,6 @@ all: $(OBJ)
 
 ./bin/%.o: ./src/%.cpp
 	@mkdir -p $(BIN_FOLDER)
-	$(CC) -o $@ $< $(CFLAGS) $(DBFLAGS)
+	$(CC) -o $@ $< $(CFLAGS) $(RELEASEFLAGS)
 clean:
 	rm -f $(BIN_FOLDER)*.o
